@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Here — Book a Brand Audit Call | Change Agents Branding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0A0A; --white: #FFFFFF; --off-white: #F5F6F4;
+      --charcoal: #1C2222; --charcoal-mid: #2C3636;
+      --sage: #8A9E92; --sage-light: #C4D5CB;
+      --ink: #1A1A1A; --muted: #6B7070; --muted-dark: #9AACAA;
+      --rule: #DCDDD9; --hover-bg: #EEF0ED;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+    .logotype { display: inline-flex; align-items: center; }
+    .ca-logo-img { height: 83px; width: auto; display: block; }
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--rule); transition: box-shadow 0.25s ease; }
+    .nav.scrolled { box-shadow: 0 1px 10px rgba(0,0,0,0.08); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); position: relative; padding-bottom: 3px; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px; background: var(--sage); transition: width 0.25s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); border: 1.5px solid var(--black); padding: 10px 22px; transition: all 0.25s ease; white-space: nowrap; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--black); transition: all 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-overlay { display: none; position: fixed; inset: 0; background: var(--white); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+    .nav-overlay.open { display: flex; }
+    .nav-overlay a { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink); }
+    .nav-overlay a.active { color: var(--sage); }
+    section { padding: 96px 0; }
+    .section-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 16px; }
+    hr.divider { border: none; border-top: 1px solid var(--sage-light); }
+    .dark { background: var(--charcoal); }
+    .dark h1, .dark h2 { color: var(--white); }
+    .dark p { color: var(--muted-dark); }
+    .dark .section-label { color: var(--sage); }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 500; line-height: 1.15; color: var(--ink); }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 34px); font-weight: 500; line-height: 1.25; color: var(--ink); margin-bottom: 20px; }
+    p { margin-bottom: 20px; }
+    p:last-child { margin-bottom: 0; }
+    .img-placeholder { background: var(--charcoal-mid); border: 1px solid #3A4848; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .img-placeholder::before { content: ''; position: absolute; width: 100%; height: 1px; background: #3A4848; top: 50%; }
+    .img-placeholder::after { content: ''; position: absolute; height: 100%; width: 1px; background: #3A4848; left: 50%; }
+    .img-label { position: relative; z-index: 1; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted-dark); text-align: center; padding: 14px 20px; max-width: 280px; line-height: 1.7; border: 1px solid #3A4848; background: rgba(28,34,34,0.85); }
+    .footer { border-top: 1px solid var(--rule); padding: 28px 0; background: var(--white); }
+    .footer-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-meta { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+    .footer-meta a { color: var(--sage); }
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* Page */
+    .page-hero { padding: 80px 0 72px; }
+    .page-hero h1 { max-width: 680px; margin-bottom: 16px; }
+    .page-hero-sub { font-size: 16px; color: var(--muted-dark); max-width: 560px; line-height: 1.75; }
+
+    /* Process steps */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); margin-top: 40px; }
+    .step { padding: 36px 32px; border-right: 1px solid var(--rule); }
+    .step:last-child { border-right: none; }
+    .step-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--sage); line-height: 1; display: block; margin-bottom: 16px; }
+    .step h3 { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.7; }
+
+    /* Form layout */
+    .form-section { background: var(--white); }
+    .form-layout { display: grid; grid-template-columns: 1fr 400px; gap: 72px; align-items: start; }
+    .form-intro h2 { max-width: 440px; }
+    .form-intro p { font-size: 15px; color: var(--muted); }
+
+    /* Image beside form */
+    .form-img { aspect-ratio: 3/4; width: 100%; }
+
+    /* Form */
+    .contact-form { border: 1px solid var(--rule); padding: 36px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink); margin-bottom: 7px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--ink); background: var(--white); border: 1px solid var(--rule); border-radius: 0; padding: 11px 14px; outline: none; appearance: none; -webkit-appearance: none; transition: border-color 0.2s ease; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--sage); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #C8CBC8; }
+    .form-group textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7070' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; cursor: pointer; }
+    .btn-submit { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); background: var(--sage); border: 1.5px solid var(--sage); padding: 15px 32px; cursor: pointer; transition: all 0.25s ease; margin-top: 28px; border-radius: 0; }
+    .btn-submit:hover { background: #6d8878; border-color: #6d8878; }
+    .form-success { display: none; text-align: center; padding: 48px 32px; border: 1px solid var(--rule); }
+    .form-success.visible { display: block; }
+    .form-success h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 12px; }
+    .form-success p { font-size: 14px; color: var(--muted); }
+
+    /* Direct contact */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--charcoal-mid); margin-top: 36px; }
+    .contact-person { padding: 32px 32px; border-right: 1px solid var(--charcoal-mid); }
+    .contact-person:last-child { border-right: none; }
+    .contact-name { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+    .contact-role { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 16px; }
+    .contact-details { list-style: none; padding: 0; }
+    .contact-details li { font-size: 13px; color: var(--muted-dark); margin-bottom: 6px; }
+    .contact-details a { color: var(--sage); }
+
+    .confidentiality { padding: 20px 0; text-align: center; border-top: 1px solid var(--charcoal-mid); }
+    .confidentiality p { font-size: 12px; color: var(--muted-dark); font-style: italic; }
+
+    @media (max-width: 900px) {
+      .form-layout { grid-template-columns: 1fr; gap: 48px; }
+      .form-img { display: none; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .step { border-right: none; border-bottom: 1px solid var(--rule); }
+      .step:last-child { border-bottom: none; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .nav-inner { padding: 0 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 64px 0; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-person { border-right: none; border-bottom: 1px solid var(--charcoal-mid); }
+      .contact-person:last-child { border-bottom: none; }
+      .contact-form { padding: 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logotype">
+        <img src="ChangeAgentsBranding_Logo.png" alt="Change Agents" class="ca-logo-img">      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="why-personal-branding.html">Why Personal Branding</a>
+        <a href="services.html">Services</a>
+        <a href="the-journey.html">The Journey</a>
+        <a href="about.html">About</a>
+      </div>
+      <a href="contact.html" class="nav-cta">Start Here</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="nav-overlay">
+    <a href="index.html">Home</a>
+    <a href="why-personal-branding.html">Why Personal Branding</a>
+    <a href="services.html">Services</a>
+    <a href="the-journey.html">The Journey</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Start Here</a>
+  </div>
+
+  <!-- Hero — DARK -->
+  <section class="page-hero dark">
+    <div class="container">
+      <h1 class="hero-stagger fade-up">Start With a Brand Audit Call</h1>
+      <p class="page-hero-sub hero-stagger fade-up">45 minutes. No obligation. We review your digital presence before the call and give you a candid assessment of where your personal brand stands — and what it could be.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Process — WHITE -->
+  <section>
+    <div class="container">
+      <span class="section-label fade-up">What Happens Next</span>
+      <h2 class="fade-up">Three Steps From Here</h2>
+      <div class="steps-grid fade-up">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>We review your presence</h3>
+          <p>Before the call we examine your LinkedIn, search results, and published content.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>45-minute conversation</h3>
+          <p>We discuss your goals, positioning, and what a meaningful visibility programme looks like for you.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>A tailored proposal</h3>
+          <p>Within five working days — recommended programmes, timelines, and investment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Form — WHITE -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-layout">
+        <div class="fade-up">
+          <span class="section-label">Request Your Audit Call</span>
+          <h2>Tell Us About You</h2>
+          <p>Complete the form and we will be in touch within one working day.</p>
+          <p style="font-size:13px; color:var(--muted); font-style:italic; margin-top:8px;">All information treated with complete confidentiality.</p>
+
+          <form class="contact-form" id="contact-form" novalidate style="margin-top:32px">
+            <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" name="full-name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="role">Current Role / Title</label>
+              <input type="text" id="role" name="role" placeholder="e.g. CTO, VP Engineering" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Your organisation" required>
+            </div>
+            <div class="form-group">
+              <label for="company-size">Company Size</label>
+              <select id="company-size" name="company-size" required>
+                <option value="" disabled selected>Select company size</option>
+                <option>1–50</option>
+                <option>51–200</option>
+                <option>201–1,000</option>
+                <option>1,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="industry">Industry Segment</label>
+              <select id="industry" name="industry" required>
+                <option value="" disabled selected>Select your segment</option>
+                <option>Enterprise Software</option>
+                <option>Cloud / SaaS</option>
+                <option>AI / ML</option>
+                <option>Hardware / Semiconductors</option>
+                <option>System Integration</option>
+                <option>GCC / Captive Centre</option>
+                <option>Telecom / Networking</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="gap">The biggest gap in your current professional visibility</label>
+              <textarea id="gap" name="gap" rows="4" placeholder="Where does your profile fall short of your actual expertise and standing?"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="timing">Preferred contact time <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(optional)</span></label>
+              <input type="text" id="timing" name="timing" placeholder="e.g. Weekday mornings, after 4pm IST">
+            </div>
+            <button type="submit" class="btn-submit">Submit Request</button>
+          </form>
+          <div class="form-success" id="form-success">
+            <h3>Request Received</h3>
+            <p>We will be in touch within one working day to schedule your brand audit call.</p>
+          </div>
+        </div>
+
+        <div class="fade-up">
+          <div class="img-placeholder form-img">
+            <span class="img-label">One-on-one advisory meeting. Two people in conversation. Warm, focused, professional.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Direct contact — DARK -->
+  <section class="dark">
+    <div class="container">
+      <span class="section-label fade-up">Prefer to Reach Us Directly</span>
+      <div class="contact-grid fade-up">
+        <div class="contact-person">
+          <div class="contact-name">Shubhendu Nath</div>
+          <span class="contact-role">Founder &amp; CEO</span>
+          <ul class="contact-details">
+            <li><a href="mailto:shubhendu.nath@changeagents.in">shubhendu.nath@changeagents.in</a></li>
+            <li>+91 99019 92978</li>
+          </ul>
+        </div>
+        <div class="contact-person">
+          <div class="contact-name">Krishnananda Vedavyasachar</div>
+          <span class="contact-role">Director — Finance &amp; Delivery</span>
+          <ul class="contact-details">
+            <li><a href="mailto:krishna.nanda@changeagents.in">krishna.nanda@changeagents.in</a></li>
+            <li>+91 98451 75199</li>
+          </ul>
+        </div>
+      </div>
+      <div class="confidentiality fade-up">
+        <p>All enquiries are treated with complete confidentiality. We do not share client information.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="logotype">
+        <img src="ChangeAgentsBranding_Logo.png" alt="Change Agents" class="ca-logo-img" style="height:64px">      </a>
+      <p class="footer-meta">A Change Agents India Practice &nbsp;&middot;&nbsp; Bangalore &nbsp;&middot;&nbsp; <a href="http://changeagents.in" target="_blank" rel="noopener">changeagents.in</a> &nbsp;&middot;&nbsp; &copy; 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a, .nav-overlay a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const navOverlay = document.getElementById('nav-overlay');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navOverlay.classList.toggle('open');
+      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+    });
+    navOverlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up:not(.hero-stagger)').forEach(el => observer.observe(el));
+    const heroItems = document.querySelectorAll('.hero-stagger');
+    heroItems.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; });
+    requestAnimationFrame(() => { requestAnimationFrame(() => { heroItems.forEach(el => el.classList.add('visible')); }); });
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      this.querySelectorAll('[required]').forEach(f => {
+        f.style.borderColor = f.value.trim() ? '' : '#c0392b';
+        if (!f.value.trim()) valid = false;
+      });
+      if (valid) {
+        this.style.display = 'none';
+        document.getElementById('form-success').classList.add('visible');
+      }
+    });
+  </script>
+</body>
+</html>

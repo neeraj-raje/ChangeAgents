@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Journey — 12 Months of Deliberate Visibility | Change Agents Branding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --off-white: #F5F6F4;
+      --charcoal: #1C2222;
+      --charcoal-mid: #2C3636;
+      --sage: #8A9E92;
+      --sage-light: #C4D5CB;
+      --ink: #1A1A1A;
+      --muted: #6B7070;
+      --muted-dark: #9AACAA;
+      --rule: #DCDDD9;
+      --hover-bg: #EEF0ED;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+    .logotype { display: inline-flex; align-items: center; }
+    .ca-logo-img { height: 83px; width: auto; display: block; }
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--rule); transition: box-shadow 0.25s ease; }
+    .nav.scrolled { box-shadow: 0 1px 10px rgba(0,0,0,0.08); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); position: relative; padding-bottom: 3px; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px; background: var(--sage); transition: width 0.25s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); border: 1.5px solid var(--black); padding: 10px 22px; transition: all 0.25s ease; white-space: nowrap; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--black); transition: all 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-overlay { display: none; position: fixed; inset: 0; background: var(--white); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+    .nav-overlay.open { display: flex; }
+    .nav-overlay a { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink); }
+    .nav-overlay a.active { color: var(--sage); }
+    section { padding: 96px 0; }
+    .section-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 16px; }
+    hr.divider { border: none; border-top: 1px solid var(--sage-light); }
+    .dark { background: var(--charcoal); }
+    .dark h1, .dark h2 { color: var(--white); }
+    .dark p { color: var(--muted-dark); }
+    .dark .section-label { color: var(--sage); }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 500; line-height: 1.15; color: var(--ink); }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 36px); font-weight: 500; line-height: 1.25; color: var(--ink); margin-bottom: 20px; }
+    p { margin-bottom: 20px; }
+    p:last-child { margin-bottom: 0; }
+    .btn-outlined { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); border: 1.5px solid var(--black); padding: 14px 32px; transition: all 0.25s ease; background: transparent; }
+    .btn-outlined:hover { background: var(--black); color: var(--white); }
+    .btn-sage { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); background: var(--sage); border: 1.5px solid var(--sage); padding: 14px 32px; transition: all 0.25s ease; }
+    .btn-sage:hover { background: #6d8878; border-color: #6d8878; }
+    .img-placeholder { background: var(--charcoal-mid); border: 1px solid #3A4848; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .img-placeholder::before { content: ''; position: absolute; width: 100%; height: 1px; background: #3A4848; top: 50%; }
+    .img-placeholder::after { content: ''; position: absolute; height: 100%; width: 1px; background: #3A4848; left: 50%; }
+    .img-label { position: relative; z-index: 1; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted-dark); text-align: center; padding: 14px 20px; max-width: 300px; line-height: 1.7; border: 1px solid #3A4848; background: rgba(28,34,34,0.85); }
+    .footer { border-top: 1px solid var(--rule); padding: 28px 0; background: var(--white); }
+    .footer-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-meta { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+    .footer-meta a { color: var(--sage); }
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* Page */
+    .page-hero { padding: 80px 0 72px; }
+    .page-hero h1 { max-width: 760px; margin-bottom: 16px; }
+    .page-hero-sub { font-size: 17px; color: var(--muted-dark); font-style: italic; }
+
+    /* Timeline */
+    .timeline-section { padding: 96px 0; }
+    .timeline { position: relative; padding-left: 88px; }
+    .timeline::before { content: ''; position: absolute; left: 24px; top: 8px; bottom: 8px; width: 2px; background: var(--sage-light); }
+    .timeline-item { position: relative; margin-bottom: 72px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-marker { position: absolute; left: -88px; top: 0; width: 68px; text-align: right; padding-right: 16px; }
+    .timeline-marker::after { content: ''; position: absolute; right: -10px; top: 18px; width: 10px; height: 10px; background: var(--sage); border-radius: 50%; }
+    .tl-number { display: block; font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 400; color: var(--sage); line-height: 1; }
+    .tl-unit { display: block; font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+    .tl-focus { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 10px; }
+    .timeline-content h3 { font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--ink); margin-bottom: 12px; }
+    .timeline-narrative { font-size: 15px; color: var(--muted); max-width: 680px; margin-bottom: 24px; }
+
+    .results-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    .results-table th { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); border: 1px solid var(--rule); padding: 10px 16px; text-align: left; background: var(--off-white); }
+    .results-table td { border: 1px solid var(--rule); padding: 12px 16px; font-size: 14px; vertical-align: top; }
+    .results-table tbody tr:hover td { background: var(--hover-bg); }
+    .results-table td:first-child { font-weight: 500; width: 30%; }
+    .qualitative { font-size: 13px; color: var(--muted); font-style: italic; border-left: 2px solid var(--sage-light); padding: 10px 16px; }
+
+    .img-band { aspect-ratio: 16/9; width: 100%; max-height: 380px; }
+
+    /* Long term */
+    .authority-list { list-style: none; padding: 0; border: 1px solid var(--charcoal-mid); margin-top: 32px; }
+    .authority-list li { padding: 16px 24px; border-bottom: 1px solid var(--charcoal-mid); font-size: 15px; color: var(--muted-dark); display: flex; align-items: flex-start; gap: 14px; }
+    .authority-list li:last-child { border-bottom: none; }
+    .authority-list li::before { content: '—'; color: var(--sage); flex-shrink: 0; }
+
+    .disclaimer { padding: 48px 0; text-align: center; }
+    .disclaimer p { font-size: 14px; color: var(--muted); font-style: italic; max-width: 680px; margin: 0 auto; }
+
+    .cta-center { text-align: center; }
+    .cta-center h2 { max-width: 480px; margin: 0 auto 32px; }
+    .cta-pair { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .dark .btn-outlined { border-color: rgba(255,255,255,0.4); color: var(--white); }
+    .dark .btn-outlined:hover { background: var(--white); color: var(--charcoal); }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .nav-inner { padding: 0 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 64px 0; }
+      .timeline-section { padding: 64px 0; }
+      .timeline { padding-left: 60px; }
+      .timeline::before { left: 14px; }
+      .timeline-marker { left: -60px; width: 46px; }
+      .tl-number { font-size: 32px; }
+      .results-table { display: block; overflow-x: auto; }
+      .cta-pair { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; align-items: flex-start; padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logotype">
+        <img src="ChangeAgentsBranding_Logo.png" alt="Change Agents" class="ca-logo-img">      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="why-personal-branding.html">Why Personal Branding</a>
+        <a href="services.html">Services</a>
+        <a href="the-journey.html">The Journey</a>
+        <a href="about.html">About</a>
+      </div>
+      <a href="contact.html" class="nav-cta">Start Here</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="nav-overlay">
+    <a href="index.html">Home</a>
+    <a href="why-personal-branding.html">Why Personal Branding</a>
+    <a href="services.html">Services</a>
+    <a href="the-journey.html">The Journey</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Start Here</a>
+  </div>
+
+  <!-- Hero — DARK -->
+  <section class="page-hero dark">
+    <div class="container">
+      <h1 class="hero-stagger fade-up">What Twelve Months of Deliberate Visibility Looks Like</h1>
+      <p class="page-hero-sub hero-stagger fade-up">A realistic, milestone-based view of what to expect — and when.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Timeline — WHITE -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="timeline">
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-marker">
+            <span class="tl-number">90</span>
+            <span class="tl-unit">Days</span>
+          </div>
+          <div class="timeline-content">
+            <span class="tl-focus">Foundation</span>
+            <h3>Clarity, Setup, and Early Traction</h3>
+            <p class="timeline-narrative">The first three months build the foundation. You leave with a positioning strategy, a rebuilt LinkedIn presence, and your first thought leadership in the market.</p>
+            <table class="results-table">
+              <thead><tr><th>Area</th><th>Where You Are</th></tr></thead>
+              <tbody>
+                <tr><td>Positioning</td><td>Narrative and themes documented</td></tr>
+                <tr><td>LinkedIn</td><td>Fully optimised profile live</td></tr>
+                <tr><td>Content</td><td>8–12 thought leadership posts published</td></tr>
+                <tr><td>Speaking pipeline</td><td>5–10 conferences identified and approached</td></tr>
+                <tr><td>Media</td><td>First conversations initiated with journalists</td></tr>
+              </tbody>
+            </table>
+            <p class="qualitative">Peers respond to your posts. Industry contacts reference things you have published.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-marker">
+            <span class="tl-number">6</span>
+            <span class="tl-unit">Months</span>
+          </div>
+          <div class="timeline-content">
+            <span class="tl-focus">Recognition</span>
+            <h3>Authority Building and Ecosystem Presence</h3>
+            <p class="timeline-narrative">Your name is circulating in industry conversations. You have been quoted, on a panel or podcast, and the right people recognise your perspective.</p>
+            <table class="results-table">
+              <thead><tr><th>Area</th><th>Where You Are</th></tr></thead>
+              <tbody>
+                <tr><td>Content</td><td>25–40 thought leadership pieces published</td></tr>
+                <tr><td>Audience</td><td>Noticeable growth in relevant professional followers</td></tr>
+                <tr><td>Speaking</td><td>1–3 engagements secured</td></tr>
+                <tr><td>Media</td><td>Quotes or features in industry publications</td></tr>
+                <tr><td>Search</td><td>Dominated by credible, current professional content</td></tr>
+              </tbody>
+            </table>
+            <p class="qualitative">Conference organisers know your name. Peers share your content.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-marker">
+            <span class="tl-number">12</span>
+            <span class="tl-unit">Months</span>
+          </div>
+          <div class="timeline-content">
+            <span class="tl-focus">Influence</span>
+            <h3>Recognised as an Industry Voice</h3>
+            <p class="timeline-narrative">A year of consistent visibility produces compounding results — a content library, an engaged audience, and a track record that opens doors that were previously closed.</p>
+            <table class="results-table">
+              <thead><tr><th>Area</th><th>Where You Are</th></tr></thead>
+              <tbody>
+                <tr><td>Content</td><td>60–100 pieces of thought leadership created</td></tr>
+                <tr><td>Speaking</td><td>3–6 conference or panel appearances</td></tr>
+                <tr><td>Media</td><td>Regular commentary opportunities with industry publications</td></tr>
+                <tr><td>Platform</td><td>Established newsletter, podcast, or content series</td></tr>
+                <tr><td>Recognition</td><td>Nominations or listings in industry rankings</td></tr>
+              </tbody>
+            </table>
+            <p class="qualitative">You are invited to speak before you apply. Analysts reference your perspectives.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Image band -->
+  <div class="img-placeholder img-band fade-up">
+    <span class="img-label">Professional milestone visual. Career arc or industry recognition. Abstract or conceptual acceptable.</span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Long-term — DARK -->
+  <section class="dark">
+    <div class="container">
+      <h2 class="fade-up">18 to 24 Months — True Industry Authority</h2>
+      <p class="fade-up" style="font-style:italic; color:var(--muted-dark); margin-bottom:0">These are the signals that indicate genuine, durable influence.</p>
+      <ul class="authority-list fade-up">
+        <li>Invitations to keynote industry conferences</li>
+        <li>Invitations to serve on industry advisory boards</li>
+        <li>Proactive requests for media commentary on major technology developments</li>
+        <li>Analysts citing your perspectives in published research</li>
+        <li>Posts that change the direction of industry conversation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Disclaimer — WHITE -->
+  <div class="disclaimer fade-up">
+    <div class="container">
+      <p>These milestones represent realistic outcomes from a consistent, well-executed programme. Individual results vary. We do not promise specific numbers — we promise systematic progress.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CTA — DARK -->
+  <section class="dark cta-center">
+    <div class="container">
+      <h2 class="fade-up">Ready to Begin?</h2>
+      <div class="cta-pair fade-up">
+        <a href="services.html" class="btn-outlined">See Our Services</a>
+        <a href="contact.html" class="btn-sage">Start Here</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="logotype">
+        <img src="ChangeAgentsBranding_Logo.png" alt="Change Agents" class="ca-logo-img" style="height:64px">      </a>
+      <p class="footer-meta">A Change Agents India Practice &nbsp;&middot;&nbsp; Bangalore &nbsp;&middot;&nbsp; <a href="http://changeagents.in" target="_blank" rel="noopener">changeagents.in</a> &nbsp;&middot;&nbsp; &copy; 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a, .nav-overlay a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const navOverlay = document.getElementById('nav-overlay');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navOverlay.classList.toggle('open');
+      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+    });
+    navOverlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up:not(.hero-stagger)').forEach(el => observer.observe(el));
+    const heroItems = document.querySelectorAll('.hero-stagger');
+    heroItems.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; });
+    requestAnimationFrame(() => { requestAnimationFrame(() => { heroItems.forEach(el => el.classList.add('visible')); }); });
+  </script>
+</body>
+</html>
