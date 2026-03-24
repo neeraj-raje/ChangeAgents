@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /Users/nee/Documents/ChangeAgents/*.jpg /Users/nee/Documents/ChangeAgents/*.jpeg /Users/nee/Documents/ChangeAgents/*.png)"
+    ]
+  }
+}

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Personal Branding for Technology Leaders | Change Agents Branding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --off-white: #F5F6F4;
+      --charcoal: #1C2222;
+      --charcoal-mid: #2C3636;
+      --sage: #8A9E92;
+      --sage-light: #C4D5CB;
+      --logo-green: #3DAA82;
+      --ink: #1A1A1A;
+      --muted: #6B7070;
+      --muted-dark: #9AACAA;
+      --rule: #DCDDD9;
+      --hover-bg: #EEF0ED;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+
+    /* Logotype */
+    .logotype { display: inline-flex; align-items: center; }
+    .ca-logo-img { height: 83px; width: auto; display: block; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--rule); transition: box-shadow 0.25s ease; }
+    .nav.scrolled { box-shadow: 0 1px 10px rgba(0,0,0,0.08); }
+    .nav-inner { width: 100%; padding: 0 100px 0 150px; display: flex; align-items: center; height: 72px; gap: 0; }
+    .nav-links { flex: 1; display: flex; align-items: center; justify-content: center; gap: 36px; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); position: relative; padding-bottom: 3px; white-space: nowrap; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px; background: var(--sage); transition: width 0.25s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); border: 1.5px solid var(--black); padding: 10px 22px; transition: all 0.25s ease; white-space: nowrap; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--black); transition: all 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile overlay */
+    .nav-overlay { display: none; position: fixed; inset: 0; background: var(--white); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+    .nav-overlay.open { display: flex; }
+    .nav-overlay a { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink); }
+    .nav-overlay a.active { color: var(--sage); }
+
+    /* Sections */
+    section { padding: 96px 0; }
+    .section-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 16px; }
+    hr.divider { border: none; border-top: 1px solid var(--sage-light); }
+
+    /* Dark sections */
+    .dark { background: var(--charcoal); }
+    .dark h1, .dark h2 { color: var(--white); }
+    .dark p { color: var(--muted-dark); }
+    .dark .section-label { color: var(--sage); }
+    .dark hr.divider { border-color: var(--charcoal-mid); }
+    .dark .stat-number { color: var(--sage); }
+    .dark .pillar-title { color: var(--sage); }
+    .dark .stats-grid, .dark .stat-item { border-color: var(--charcoal-mid); }
+    .dark .pillars-grid, .dark .pillar { border-color: var(--charcoal-mid); }
+    .dark .opp-grid, .dark .opp-item { border-color: var(--charcoal-mid); }
+    .dark .roles-strip, .dark .role-item { border-color: var(--charcoal-mid); }
+    .dark .role-item { color: var(--muted-dark); }
+    .dark .who-note { color: var(--muted-dark); }
+    .dark .btn-outlined { border-color: rgba(255,255,255,0.5); color: var(--white); }
+    .dark .btn-outlined:hover { background: var(--white); color: var(--charcoal); }
+    .dark .btn-sage { background: var(--sage); color: var(--white); border-color: var(--sage); }
+    .dark .btn-sage:hover { background: #6d8878; border-color: #6d8878; }
+
+    /* Typography */
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5.5vw, 64px); font-weight: 500; line-height: 1.12; color: var(--ink); }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 500; line-height: 1.2; color: var(--ink); margin-bottom: 28px; }
+    h3 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; }
+    p { margin-bottom: 20px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* Buttons */
+    .btn-outlined { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); border: 1.5px solid var(--black); padding: 14px 32px; transition: all 0.25s ease; background: transparent; }
+    .btn-outlined:hover { background: var(--black); color: var(--white); }
+    .btn-sage { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); background: var(--sage); border: 1.5px solid var(--sage); padding: 14px 32px; transition: all 0.25s ease; }
+    .btn-sage:hover { background: #6d8878; border-color: #6d8878; }
+
+    /* Image placeholder */
+    .img-placeholder { background: var(--charcoal-mid); border: 1px solid #3A4848; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .img-placeholder::before { content: ''; position: absolute; width: 100%; height: 1px; background: #3A4848; top: 50%; }
+    .img-placeholder::after { content: ''; position: absolute; height: 100%; width: 1px; background: #3A4848; left: 50%; }
+    .img-label { position: relative; z-index: 1; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted-dark); text-align: center; padding: 14px 20px; max-width: 300px; line-height: 1.7; border: 1px solid #3A4848; background: rgba(28,34,34,0.85); }
+
+    /* Footer */
+    .footer { border-top: 1px solid var(--rule); padding: 28px 0; background: var(--white); }
+    .footer-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-meta { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+    .footer-meta a { color: var(--sage); }
+
+    /* Animations */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== PAGE SECTIONS ===== */
+
+    /* Hero */
+    .hero { position: relative; min-height: 72vh; display: flex; align-items: flex-end; padding: 0; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% center; display: block; pointer-events: none; will-change: opacity; }
+    .hero-video-b { opacity: 0; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(29,34,34,0.88) 0%, rgba(29,34,34,0.72) 38%, rgba(29,34,34,0.20) 65%, rgba(29,34,34,0.00) 100%); }
+    .hero-content { position: relative; z-index: 2; padding: 56px 40px 72px 64px; max-width: 520px; }
+    .hero .section-label { color: var(--logo-green); }
+    .hero h1 { margin-bottom: 22px; color: var(--white); }
+    .hero-subtext { font-size: 18px; color: rgba(255,255,255,0.80); line-height: 1.65; margin-bottom: 40px; max-width: 520px; }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-ctas .btn-outlined { border: 1.5px solid rgba(255,255,255,0.80); color: var(--white); background: transparent; }
+    .hero-ctas .btn-outlined:hover { background: rgba(255,255,255,0.18); border-color: var(--white); color: var(--white); }
+
+    /* Stats */
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); margin: 48px 0 40px; }
+    .stat-item { padding: 44px 32px; border-right: 1px solid var(--rule); background: #EDEEED; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { display: block; font-family: 'Bebas Neue', 'DM Sans', sans-serif; font-size: clamp(60px, 8vw, 92px); font-weight: 400; color: var(--sage); line-height: 1; margin-bottom: 14px; letter-spacing: 0.02em; }
+    .stat-label { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+    /* Opportunity grid */
+    .opp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--charcoal-mid); margin-top: 48px; }
+    .opp-item { padding: 40px 36px; border-right: 1px solid var(--charcoal-mid); border-bottom: 1px solid var(--charcoal-mid); }
+    .opp-item:nth-child(even) { border-right: none; }
+    .opp-item:nth-last-child(-n+2) { border-bottom: none; }
+    .opp-item p { font-size: 15px; margin: 0; line-height: 1.7; }
+    .opp-icon { display: block; margin-bottom: 18px; color: var(--logo-green); }
+    .opp-icon svg { display: block; }
+    .opp-item h3 { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white) !important; margin-bottom: 12px; }
+
+    /* Who We Serve */
+    .roles-strip { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--rule); margin-bottom: 28px; }
+    .role-item { padding: 22px 28px; border-right: 1px solid var(--rule); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; }
+    .role-item:last-child { border-right: none; }
+    .who-note { font-size: 14px; color: var(--muted); font-style: italic; max-width: 640px; }
+
+    /* Pillars */
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--charcoal-mid); margin-top: 48px; }
+    .pillar { padding: 48px 36px; border-right: 1px solid var(--charcoal-mid); border-top: 3px solid transparent; }
+    .pillar:last-child { border-right: none; }
+    .pillar-title { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); display: block; margin-bottom: 18px; }
+    .pillar p { font-size: 15px; line-height: 1.7; margin: 0; }
+
+    /* Credibility / Heritage */
+    .heritage-layout { display: grid; grid-template-columns: 240px 1fr; gap: 0; border: 1px solid var(--rule); margin-top: 40px; }
+    .parent-card { padding: 32px 28px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--off-white); text-align: center; }
+    .parent-logo { height: 72px; width: auto; display: block; margin: 0 auto; }
+    .parent-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 16px; }
+    .client-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 0; padding: 0; }
+    .client-names-wrap { padding: 20px 28px; display: flex; flex-wrap: wrap; align-items: center; }
+    .client-name { font-size: 13px; color: var(--muted); letter-spacing: 0.06em; padding: 8px 20px; border-right: 1px solid var(--rule); }
+    .client-name:last-child { border-right: none; }
+
+    /* CTA */
+    .cta-center { text-align: center; }
+    .cta-center h2 { white-space: nowrap; font-size: clamp(22px, 2.8vw, 38px); margin: 0 auto 18px; }
+    .cta-center p { font-size: 16px; max-width: 460px; margin: 0 auto 36px; }
+
+    /* Wide image band */
+    .img-band { aspect-ratio: 21/9; width: 100%; }
+
+    @media (max-width: 900px) {
+      .hero-content { padding: 40px 24px 56px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--rule); }
+      .stat-item:last-child { border-bottom: none; }
+      .opp-grid { grid-template-columns: 1fr; }
+      .opp-item { border-right: none; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .pillar { border-right: none; border-bottom: 1px solid var(--charcoal-mid); }
+      .pillar:last-child { border-bottom: none; }
+      .heritage-layout { grid-template-columns: 1fr; }
+      .parent-card { border-right: none; border-bottom: 1px solid var(--rule); flex-direction: row; gap: 20px; justify-content: flex-start; padding: 24px 28px; }
+      .parent-label { margin-top: 0; }
+      .cta-center h2 { white-space: normal; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .nav-inner { padding: 0 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 64px 0; }
+      .hero { min-height: 80vh; }
+      .roles-strip { flex-direction: column; }
+      .role-item { border-right: none; border-bottom: 1px solid var(--rule); width: 100%; }
+      .role-item:last-child { border-bottom: none; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas a { text-align: center; }
+      .client-name { border-right: none; padding: 5px 0; }
+      .footer-inner { flex-direction: column; align-items: flex-start; padding: 0 24px; }
+      .img-band { aspect-ratio: 16/9; }
+      .cta-center h2 { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logotype">
+        <img src="ChangeAgentsBranding_Logo.png" alt="Change Agents" class="ca-logo-img">      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="why-personal-branding.html">Why Personal Branding</a>
+        <a href="services.html">Services</a>
+        <a href="the-journey.html">The Journey</a>
+        <a href="about.html">About</a>
+      </div>
+      <a href="contact.html" class="nav-cta">Start Here</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay" id="nav-overlay">
+    <a href="index.html">Home</a>
+    <a href="why-personal-branding.html">Why Personal Branding</a>
+    <a href="services.html">Services</a>
+    <a href="the-journey.html">The Journey</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Start Here</a>
+  </div>
+
+  <!-- Hero — FULL BLEED -->
+  <section class="hero">
+    <video class="hero-bg hero-video-a" autoplay muted playsinline poster="Executive_Speaker.jpg">
+      <source src="Executive_Speaker.mp4" type="video/mp4">
+    </video>
+    <video class="hero-bg hero-video-b" muted playsinline>
+      <source src="Executive_Speaker.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="section-label hero-stagger fade-up" style="color:var(--sage);">Executive Personal Branding</span>
+      <h1 class="hero-stagger fade-up">Your Expertise<br>Deserves to Be Heard</h1>
+      <p class="hero-subtext hero-stagger fade-up">We build the platform, narrative, and visibility that makes technology leaders the recognised voices in their field.</p>
+      <div class="hero-ctas hero-stagger fade-up">
+        <a href="services.html" class="btn-outlined">See Our Services</a>
+        <a href="contact.html" class="btn-sage">Start Here</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visibility Gap — WHITE -->
+  <section>
+    <div class="container">
+      <span class="section-label fade-up">The Problem</span>
+      <h2 class="fade-up">You Have the Expertise.<br>The Industry Doesn't Know It Yet.</h2>
+      <div class="stats-grid fade-up">
+        <div class="stat-item">
+          <span class="stat-number">73%</span>
+          <span class="stat-label">of B2B technology deals are influenced by the buyer's prior perception of leadership</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4×</span>
+          <span class="stat-label">more likely to be invited to speak — for executives with active thought leadership</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1 in 3</span>
+          <span class="stat-label">enterprise technology leaders have no structured visibility strategy</span>
+        </div>
+      </div>
+      <div class="fade-up" style="max-width:760px">
+        <p>Enterprise buyers do not buy products. They buy confidence in the people behind the products. Your professional reputation is doing sales work — whether you manage it or not.</p>
+        <p>The gap is not capability. The gap is visibility. We close that gap.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Opportunity — DARK -->
+  <section class="dark">
+    <div class="container">
+      <span class="section-label fade-up">The Opportunity</span>
+      <h2 class="fade-up">Executive Visibility Has Become a Strategic Lever</h2>
+      <div class="opp-grid fade-up">
+        <div class="opp-item">
+          <span class="opp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 12h20"/></svg></span>
+          <h3>Deals</h3>
+          <p>A recognised name shortens the sales cycle and elevates the conversation from features to strategy.</p>
+        </div>
+        <div class="opp-item">
+          <span class="opp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <h3>Hiring</h3>
+          <p>The best talent chooses employers where leadership is visible and respected. Your brand is your talent pipeline.</p>
+        </div>
+        <div class="opp-item">
+          <span class="opp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+          <h3>Partnerships</h3>
+          <p>Platform providers and system integrators partner with people they know. Visibility creates the familiarity that partnership requires.</p>
+        </div>
+        <div class="opp-item">
+          <span class="opp-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
+          <h3>Influence</h3>
+          <p>Analysts, conference organisers, and journalists reference the same pool of recognised voices. Being in that pool is a compounding asset.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve — WHITE -->
+  <section>
+    <div class="container">
+      <span class="section-label fade-up">Who We Serve</span>
+      <h2 class="fade-up">Built Exclusively for Enterprise Technology Leaders</h2>
+      <div class="roles-strip fade-up">
+        <div class="role-item">Enterprise CIOs</div>
+        <div class="role-item">CTOs</div>
+        <div class="role-item">AI Leaders</div>
+        <div class="role-item">SaaS Founders</div>
+        <div class="role-item">GCC Leaders</div>
+        <div class="role-item">System Integrator Executives</div>
+      </div>
+      <p class="who-note fade-up">Built entirely around the enterprise technology ecosystem — where our 20-year communication heritage lives.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Three Pillars — DARK -->
+  <section class="dark">
+    <div class="container">
+      <span class="section-label fade-up">Our Promise</span>
+      <h2 class="fade-up">Three Pillars of Lasting Authority</h2>
+      <div class="pillars-grid fade-up">
+        <div class="pillar" style="background:#182C24; border-top-color:var(--logo-green);">
+          <span class="pillar-title">Clarity</span>
+          <p>We define what you stand for, what you should be known for, and how your expertise should be positioned.</p>
+        </div>
+        <div class="pillar" style="background:#1A2535; border-top-color:var(--sage);">
+          <span class="pillar-title">Visibility</span>
+          <p>We build the content, media, and speaking infrastructure that puts your name in front of the right audiences, consistently.</p>
+        </div>
+        <div class="pillar" style="background:#26202C; border-top-color:var(--sage-light);">
+          <span class="pillar-title">Influence</span>
+          <p>We develop the platform — newsletter, podcast, research, or book — that makes your ideas drive industry conversation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility — WHITE -->
+  <section>
+    <div class="container">
+      <span class="section-label fade-up">Our Heritage</span>
+      <h2 class="fade-up">20 Years Inside Enterprise Technology Communications</h2>
+      <div class="heritage-layout fade-up">
+        <div class="parent-card">
+          <img src="ChangeAgents_Logo_Transperant.png" alt="Change Agents India" class="parent-logo">
+          <span class="parent-label">Parent Company</span>
+        </div>
+        <div class="client-names-wrap">
+          <span class="client-name">Fortinet</span>
+          <span class="client-name">Logitech</span>
+          <span class="client-name">Sophos</span>
+          <span class="client-name">Corsair</span>
+          <span class="client-name">Parallels</span>
+          <span class="client-name">Array Networks</span>
+          <span class="client-name">Allied Telesis</span>
+          <span class="client-name">iValue InfoSolutions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wide image band -->
+  <div class="img-band fade-up" style="overflow:hidden;">
+    <img src="Executive_Boardroom.jpg" alt="Enterprise leadership team in boardroom" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
+  </div>
+
+  <!-- Bottom CTA — DARK -->
+  <section class="dark cta-center">
+    <div class="container">
+      <h2 class="fade-up">Begin With a Brand Audit Call</h2>
+      <p class="fade-up">45 minutes. We review your presence and give you a direct assessment — no obligation.</p>
+      <a href="contact.html" class="btn-sage fade-up">Book Your Audit Call</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="logotype">
+        <img src="ChangeAgentsBranding_Logo.png" alt="Change Agents" class="ca-logo-img" style="height:96px">      </a>
+      <p class="footer-meta">A Change Agents India Practice &nbsp;&middot;&nbsp; Bangalore &nbsp;&middot;&nbsp; <a href="http://changeagents.in" target="_blank" rel="noopener">changeagents.in</a> &nbsp;&middot;&nbsp; &copy; 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a, .nav-overlay a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const navOverlay = document.getElementById('nav-overlay');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navOverlay.classList.toggle('open');
+      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+    });
+    navOverlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up:not(.hero-stagger)').forEach(el => observer.observe(el));
+    const heroItems = document.querySelectorAll('.hero-stagger');
+    heroItems.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; });
+    requestAnimationFrame(() => { requestAnimationFrame(() => { heroItems.forEach(el => el.classList.add('visible')); }); });
+
+    /* ── Hero video cross-fade loop ── */
+    (function() {
+      const vids = [
+        document.querySelector('.hero-video-a'),
+        document.querySelector('.hero-video-b')
+      ];
+      const FADE_SEC = 1.5;           // overlap duration in seconds
+      let active = 0;
+      let fading = false;
+
+      function crossfade() {
+        if (fading) return;
+        fading = true;
+        const next = 1 - active;
+        vids[next].currentTime = 0;
+        vids[next].play();
+
+        const startTs = performance.now();
+        const durMs   = FADE_SEC * 1000;
+
+        function tick(now) {
+          const p = Math.min((now - startTs) / durMs, 1);
+          vids[active].style.opacity = String(1 - p);
+          vids[next].style.opacity   = String(p);
+          if (p < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            vids[active].pause();
+            vids[active].style.opacity = '0';
+            active = next;
+            fading = false;
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+
+      vids.forEach(function(v) {
+        v.addEventListener('timeupdate', function() {
+          if (!fading && v === vids[active] && v.duration && !isNaN(v.duration)) {
+            if (v.currentTime >= v.duration - FADE_SEC - 0.05) {
+              crossfade();
+            }
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

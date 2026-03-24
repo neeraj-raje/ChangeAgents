@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — A Complete System for Industry Authority | Change Agents Branding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --off-white: #F5F6F4;
+      --charcoal: #1C2222;
+      --charcoal-mid: #2C3636;
+      --sage: #8A9E92;
+      --sage-light: #C4D5CB;
+      --ink: #1A1A1A;
+      --muted: #6B7070;
+      --muted-dark: #9AACAA;
+      --rule: #DCDDD9;
+      --hover-bg: #EEF0ED;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+    .logotype { display: inline-flex; align-items: center; }
+    .ca-logo-img { height: 83px; width: auto; display: block; }
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--rule); transition: box-shadow 0.25s ease; }
+    .nav.scrolled { box-shadow: 0 1px 10px rgba(0,0,0,0.08); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); position: relative; padding-bottom: 3px; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1px; background: var(--sage); transition: width 0.25s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink); border: 1.5px solid var(--black); padding: 10px 22px; transition: all 0.25s ease; white-space: nowrap; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--black); transition: all 0.25s ease; transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-overlay { display: none; position: fixed; inset: 0; background: var(--white); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+    .nav-overlay.open { display: flex; }
+    .nav-overlay a { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink); }
+    .nav-overlay a.active { color: var(--sage); }
+    section { padding: 96px 0; }
+    .section-label { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 16px; }
+    hr.divider { border: none; border-top: 1px solid var(--sage-light); }
+    .dark { background: var(--charcoal); }
+    .dark h1, .dark h2 { color: var(--white); }
+    .dark p { color: var(--muted-dark); }
+    .dark .section-label { color: var(--sage); }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 500; line-height: 1.15; color: var(--ink); }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 38px); font-weight: 500; line-height: 1.25; color: var(--ink); margin-bottom: 20px; }
+    p { margin-bottom: 20px; }
+    p:last-child { margin-bottom: 0; }
+    .btn-sage { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); background: var(--sage); border: 1.5px solid var(--sage); padding: 14px 32px; transition: all 0.25s ease; }
+    .btn-sage:hover { background: #6d8878; border-color: #6d8878; }
+
+    /* Image placeholder */
+    .img-placeholder { background: var(--charcoal-mid); border: 1px solid #3A4848; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .img-placeholder::before { content: ''; position: absolute; width: 100%; height: 1px; background: #3A4848; top: 50%; }
+    .img-placeholder::after { content: ''; position: absolute; height: 100%; width: 1px; background: #3A4848; left: 50%; }
+    .img-label { position: relative; z-index: 1; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted-dark); text-align: center; padding: 14px 20px; max-width: 300px; line-height: 1.7; border: 1px solid #3A4848; background: rgba(28,34,34,0.85); }
+
+    .footer { border-top: 1px solid var(--rule); padding: 28px 0; background: var(--white); }
+    .footer-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-meta { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+    .footer-meta a { color: var(--sage); }
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* Page specific */
+    .page-hero { padding: 80px 0 72px; }
+    .page-hero h1 { max-width: 820px; margin-bottom: 20px; }
+    .page-hero-sub { font-size: 17px; color: var(--muted-dark); max-width: 640px; line-height: 1.7; margin-bottom: 12px; }
+    .page-hero-note { font-size: 13px; color: var(--muted-dark); font-style: italic; }
+
+    .ai-banner { background: var(--sage-light); padding: 18px 40px; text-align: center; border-top: 1px solid var(--sage); border-bottom: 1px solid var(--sage); }
+    .ai-banner p { font-size: 14px; color: var(--ink); margin: 0; }
+    .ai-banner strong { font-weight: 600; }
+
+    .img-band { aspect-ratio: 16/9; width: 100%; max-height: 400px; }
+
+    .service-block { padding: 72px 0; border-bottom: 1px solid var(--rule); }
+    .service-block:last-of-type { border-bottom: none; }
+    .service-block.dark { border-bottom-color: var(--charcoal-mid); }
+    .service-number { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 400; color: var(--sage); line-height: 0.9; margin-bottom: 14px; display: block; }
+    .service-intro { font-size: 15px; max-width: 760px; margin-bottom: 28px; }
+    .service-block.dark .service-intro { color: var(--muted-dark); }
+
+    .service-table { width: 100%; border-collapse: collapse; }
+    .service-table th { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); border: 1px solid var(--rule); padding: 12px 18px; text-align: left; background: var(--off-white); }
+    .service-table td { border: 1px solid var(--rule); padding: 16px 18px; font-size: 14px; vertical-align: top; line-height: 1.6; }
+    .service-table tbody tr:hover td { background: var(--hover-bg); transition: background 0.2s ease; }
+    .service-table td:first-child { font-weight: 500; width: 35%; }
+
+    /* dark table variant */
+    .dark .service-table th { background: var(--charcoal-mid); color: var(--muted-dark); border-color: var(--charcoal-mid); }
+    .dark .service-table td { border-color: var(--charcoal-mid); color: var(--muted-dark); }
+    .dark .service-table td:first-child { color: var(--white); }
+    .dark .service-table tbody tr:hover td { background: rgba(255,255,255,0.04); }
+
+    .outcome { border-left: 3px solid var(--sage); padding: 14px 20px; font-style: italic; color: var(--muted); margin-top: 28px; font-size: 14px; }
+    .dark .outcome { color: var(--muted-dark); border-left-color: var(--sage); }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--rule); margin-top: 40px; }
+    .metric-col { padding: 32px 24px; border-right: 1px solid var(--rule); }
+    .metric-col:last-child { border-right: none; }
+    .metric-title { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 14px; }
+    .metric-col ul { list-style: none; padding: 0; }
+    .metric-col ul li { font-size: 13px; color: var(--muted); padding: 5px 0; border-bottom: 1px solid var(--rule); }
+    .metric-col ul li:last-child { border-bottom: none; }
+
+    .disclaimer { padding: 40px 0; text-align: center; }
+    .disclaimer p { font-size: 14px; color: var(--muted); font-style: italic; max-width: 680px; margin: 0 auto; }
+
+    .cta-center { text-align: center; }
+    .cta-center h2 { max-width: 520px; margin: 0 auto 16px; }
+    .cta-center p { font-size: 16px; max-width: 500px; margin: 0 auto 32px; }
+    .dark .cta-center p { color: var(--muted-dark); }
+
+    @media (max-width: 900px) {
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .metric-col:nth-child(2) { border-right: none; }
+      .metric-col:nth-child(3) { border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+      .metric-col:nth-child(4) { border-top: 1px solid var(--rule); border-right: none; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .nav-inner { padding: 0 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 64px 0; }
+      .service-block { padding: 48px 0; }
+      .service-number { font-size: 52px; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .metric-col { border-right: none; border-bottom: 1px solid var(--rule); }
+      .metric-col:nth-child(3) { border-right: none; }
+      .ai-banner { padding: 16px 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; padding: 0 24px; }
+      .service-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logotype">
+        <img src="ChangeAgentsBranding_Logo.png" alt="Change Agents" class="ca-logo-img">      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="why-personal-branding.html">Why Personal Branding</a>
+        <a href="services.html">Services</a>
+        <a href="the-journey.html">The Journey</a>
+        <a href="about.html">About</a>
+      </div>
+      <a href="contact.html" class="nav-cta">Start Here</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="nav-overlay">
+    <a href="index.html">Home</a>
+    <a href="why-personal-branding.html">Why Personal Branding</a>
+    <a href="services.html">Services</a>
+    <a href="the-journey.html">The Journey</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav-cta">Start Here</a>
+  </div>
+
+  <!-- Hero — DARK -->
+  <section class="page-hero dark">
+    <div class="container">
+      <span class="section-label hero-stagger fade-up">What We Do</span>
+      <h1 class="hero-stagger fade-up">A Complete System for Building Industry Authority</h1>
+      <p class="page-hero-sub hero-stagger fade-up">Six integrated programmes. Not a social media retainer — a structured communications architecture for enterprise technology leaders.</p>
+      <p class="page-hero-note hero-stagger fade-up">All engagements are scoped individually. Pricing available upon discussion.</p>
+    </div>
+  </section>
+
+  <div class="ai-banner">
+    <p><strong>Every programme is powered by AI</strong> — capturing your ideas, multiplying your content, tracking your reputation, and ensuring your expertise reaches more of the right people with less of your time.</p>
+  </div>
+
+  <!-- Image placeholder -->
+  <div class="img-band fade-up" style="overflow:hidden;">
+    <img src="Executive_Whiteboard.jpg" alt="Strategic advisory session, whiteboard, enterprise context" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
+  </div>
+
+  <!-- Services -->
+  <div class="container">
+
+    <div class="service-block fade-up">
+      <span class="service-number">01</span>
+      <h2>Define What You Want to Be Known For</h2>
+      <p class="service-intro">Strategic groundwork before you publish anything. We establish your narrative, themes, and positioning — so everything that follows is coherent and intentional.</p>
+      <table class="service-table">
+        <thead><tr><th>What You Get</th><th>What It Means</th></tr></thead>
+        <tbody>
+          <tr><td>A clear leadership narrative</td><td>We define what you stand for and how your experience should be communicated.</td></tr>
+          <tr><td>Defined thought leadership themes</td><td>The 3–5 topics you should own in your industry.</td></tr>
+          <tr><td>A positioning strategy</td><td>How you should be perceived relative to other leaders in your field.</td></tr>
+          <tr><td>A personal brand blueprint</td><td>Messaging, topics, channel strategy, and a 12-month visibility roadmap.</td></tr>
+        </tbody>
+      </table>
+      <div class="outcome">Outcome: Decision-makers understand your expertise and what you represent.</div>
+    </div>
+
+    <div class="service-block fade-up">
+      <span class="service-number">02</span>
+      <h2>Turn Your Ideas Into Consistent Thought Leadership</h2>
+      <p class="service-intro">You have expertise. We build the system that turns it into a consistent, high-quality stream of content reaching the right audiences.</p>
+      <table class="service-table">
+        <thead><tr><th>What You Get</th><th>What It Means</th></tr></thead>
+        <tbody>
+          <tr><td>Regular LinkedIn insights</td><td>Your ideas published consistently — without requiring you to write from scratch.</td></tr>
+          <tr><td>Industry opinion articles</td><td>Your views appearing in long-form formats on credible platforms.</td></tr>
+          <tr><td>Executive commentary on trends</td><td>When major developments happen, your informed response is visible.</td></tr>
+          <tr><td>Speeches and presentation narratives</td><td>Structured ideas for conferences, panels, and leadership forums.</td></tr>
+        </tbody>
+      </table>
+      <div class="outcome">Outcome: Your ideas become consistently associated with important industry conversations.</div>
+    </div>
+
+    <div class="service-block fade-up">
+      <span class="service-number">03</span>
+      <h2>Expand Your Presence in the Industry Ecosystem</h2>
+      <p class="service-intro">Recognition comes from being in the rooms where decisions are made. We build access — to stages, media, podcasts, and platforms that matter.</p>
+      <table class="service-table">
+        <thead><tr><th>What You Get</th><th>What It Means</th></tr></thead>
+        <tbody>
+          <tr><td>Speaking opportunities</td><td>We identify and pitch conferences and panels where your expertise is valued.</td></tr>
+          <tr><td>Podcast and interview placements</td><td>Platforms where your perspective reaches new professional audiences.</td></tr>
+          <tr><td>Media mentions and commentary</td><td>Journalists feature your insights on enterprise technology topics.</td></tr>
+          <tr><td>Awards and industry recognition</td><td>We identify and manage relevant nominations for leadership rankings.</td></tr>
+        </tbody>
+      </table>
+      <div class="outcome">Outcome: You become more visible where deals, decisions, and conversations happen.</div>
+    </div>
+
+    <div class="service-block fade-up">
+      <span class="service-number">04</span>
+      <h2>Build a Digital Presence That Reflects Your Leadership</h2>
+      <p class="service-intro">Before a prospect meets you, they Google you. We make sure what they find reflects the leader you actually are.</p>
+      <table class="service-table">
+        <thead><tr><th>What You Get</th><th>What It Means</th></tr></thead>
+        <tbody>
+          <tr><td>Optimised LinkedIn profile</td><td>Your profile clearly communicates experience, expertise, and perspective.</td></tr>
+          <tr><td>A personal leadership website</td><td>A central place for your ideas, talks, articles, and credentials.</td></tr>
+          <tr><td>Search presence improvement</td><td>When people search your name, they find credible, current information.</td></tr>
+          <tr><td>Video introductions and clips</td><td>Short videos that communicate your thinking to audiences who haven't met you.</td></tr>
+        </tbody>
+      </table>
+      <div class="outcome">Outcome: Your digital presence reflects your real expertise and leadership standing.</div>
+    </div>
+
+    <div class="service-block fade-up">
+      <span class="service-number">05</span>
+      <h2>Protect and Strengthen Your Professional Reputation</h2>
+      <p class="service-intro">Reputation is built slowly and damaged quickly. We monitor, prepare, and ensure accurate information dominates the record.</p>
+      <table class="service-table">
+        <thead><tr><th>What You Get</th><th>What It Means</th></tr></thead>
+        <tbody>
+          <tr><td>Ongoing monitoring of mentions</td><td>We track how and where your name appears across media and the internet.</td></tr>
+          <tr><td>Media and interview preparation</td><td>Strategic guidance for press interviews and panel discussions.</td></tr>
+          <tr><td>Inaccurate information management</td><td>We identify and work to correct misleading or outdated information.</td></tr>
+          <tr><td>Proactive reputation building</td><td>Positive, authoritative content consistently occupies your search results.</td></tr>
+        </tbody>
+      </table>
+      <div class="outcome">Outcome: Your professional reputation is actively managed — not left to chance or algorithm.</div>
+    </div>
+
+    <div class="service-block fade-up">
+      <span class="service-number">06</span>
+      <h2>Build Platforms That Create Lasting Industry Influence</h2>
+      <p class="service-intro">The most influential voices own platforms. A newsletter, podcast, book, or research report creates an audience no algorithm can take away.</p>
+      <table class="service-table">
+        <thead><tr><th>What You Get</th><th>What It Means</th></tr></thead>
+        <tbody>
+          <tr><td>A thought leadership newsletter</td><td>A direct line to a focused professional audience — owned by you.</td></tr>
+          <tr><td>A podcast or video series</td><td>A platform where you host conversations with industry peers.</td></tr>
+          <tr><td>A published leadership book</td><td>A structured programme to document and publish your ideas.</td></tr>
+          <tr><td>Industry research reports</td><td>Substantive pieces that position you as a leading analytical voice.</td></tr>
+        </tbody>
+      </table>
+      <div class="outcome">Outcome: You build a platform where your ideas influence enterprise technology thinking over time.</div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- Metrics — WHITE -->
+  <section>
+    <div class="container">
+      <span class="section-label fade-up">Measuring Progress</span>
+      <h2 class="fade-up">Four Categories of Meaningful Progress</h2>
+      <div class="metrics-grid fade-up">
+        <div class="metric-col">
+          <span class="metric-title">Visibility</span>
+          <ul><li>Content published</li><li>Audience growth</li><li>Search presence</li></ul>
+        </div>
+        <div class="metric-col">
+          <span class="metric-title">Credibility</span>
+          <ul><li>Media mentions</li><li>Industry publications</li><li>Analyst interactions</li></ul>
+        </div>
+        <div class="metric-col">
+          <span class="metric-title">Access</span>
+          <ul><li>Speaking invitations</li><li>Podcast appearances</li><li>Industry panels</li></ul>
+        </div>
+        <div class="metric-col">
+          <span class="metric-title">Influence</span>
+          <ul><li>Peer engagement</li><li>Discussion triggered</li><li>Collaboration invitations</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer fade-up">
+    <div class="container">
+      <p>We do not promise viral posts, specific follower numbers, or a volume of press coverage. We promise a systematic programme that builds genuine industry authority over 12 months.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CTA — DARK -->
+  <section class="dark cta-center">
+    <div class="container">
+      <h2 class="fade-up">Every Engagement Is Scoped to Your Objectives</h2>
+      <p class="fade-up">We begin with a 45-minute brand audit call — no packages, no assumptions.</p>
+      <a href="contact.html" class="btn-sage fade-up">Book Your Brand Audit Call</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="index.html" class="logotype">
+        <img src="ChangeAgentsBranding_Logo.png" alt="Change Agents" class="ca-logo-img" style="height:64px">      </a>
+      <p class="footer-meta">A Change Agents India Practice &nbsp;&middot;&nbsp; Bangalore &nbsp;&middot;&nbsp; <a href="http://changeagents.in" target="_blank" rel="noopener">changeagents.in</a> &nbsp;&middot;&nbsp; &copy; 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a, .nav-overlay a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const navOverlay = document.getElementById('nav-overlay');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navOverlay.classList.toggle('open');
+      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+    });
+    navOverlay.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up:not(.hero-stagger)').forEach(el => observer.observe(el));
+    const heroItems = document.querySelectorAll('.hero-stagger');
+    heroItems.forEach((el, i) => { el.style.transitionDelay = (i * 0.1) + 's'; });
+    requestAnimationFrame(() => { requestAnimationFrame(() => { heroItems.forEach(el => el.classList.add('visible')); }); });
+  </script>
+</body>
+</html>
