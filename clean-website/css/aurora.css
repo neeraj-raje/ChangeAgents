@@ -1,0 +1,91 @@
+/* Aurora Effects and Animations */
+
+/* Aurora Hero Background */
+.aurora-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f172a 50%, #1a1a1a 100%);
+  overflow: hidden;
+  padding: 2.5rem;
+}
+
+.aurora-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(100deg, #3b82f6 10%, #a5b4fc 15%, #93c5fd 20%, #ddd6fe 25%, #60a5fa 30%),
+    repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%);
+  background-size: 300% 200%, 200% 100%;
+  background-position: 50% 50%, 50% 50%;
+  background-attachment: fixed;
+  opacity: 0.15;
+  filter: blur(10px);
+  animation: aurora 60s linear infinite;
+  mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+}
+
+.aurora-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(100deg, #000 0%, #000 7%, transparent 10%, transparent 12%, #000 16%),
+    repeating-linear-gradient(100deg, #3b82f6 10%, #a5b4fc 15%, #93c5fd 20%, #ddd6fe 25%, #60a5fa 30%);
+  background-size: 200% 100%, 300% 200%;
+  background-position: 50% 50%, 50% 50%;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+}
+
+/* Aurora Hero Content */
+.aurora-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2.5rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Animations */
+@keyframes aurora {
+  from {
+    background-position: 0% 0%, 0% 0%;
+  }
+  to {
+    background-position: 300% 0%, -300% 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,119 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef, useState } from 'react'
+
+export default function DarkCTAFooter() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setSubmitted(true)
+    setTimeout(() => {
+      setFormData({ name: '', email: '', message: '' })
+      setSubmitted(false)
+    }, 3000)
+  }
+
+  return (
+    <section className="bg-gradient-to-br from-slate-900 via-aurora-blue-900 to-slate-900 px-6 lg:px-8 py-24 lg:py-32 relative overflow-hidden">
+      {/* Subtle aurora glow background */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-aurora-blue-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-aurora-indigo-300 rounded-full blur-3xl"></div>
+      </div>
+
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="max-w-6xl mx-auto relative z-10"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Left side */}
+          <div>
+            <h2 className="font-medium text-heading text-white">
+              Limited Engagements. Serious Conversations.
+            </h2>
+
+            <p className="font-normal text-lead text-white/70 mt-8">
+              We work with a small number of enterprise leaders each year. Engagement begins with a confidential exploratory discussion.
+            </p>
+          </div>
+
+          {/* Right side — Contact form */}
+          <div id="footer-form">
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-lg p-8">
+              <h3 className="font-medium text-h3 text-white mb-8">
+                Start the conversation
+              </h3>
+
+              {submitted ? (
+                <div className="bg-aurora-blue-500/20 border border-aurora-blue-400/40 rounded-lg p-6 text-center">
+                  <p className="text-body text-white">
+                    Thank you. We&apos;ll be in touch shortly.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Full Name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-body text-white placeholder-white/50 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-aurora-blue-400/30 transition-all backdrop-blur-sm"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Work Email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-body text-white placeholder-white/50 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-aurora-blue-400/30 transition-all backdrop-blur-sm"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      name="message"
+                      placeholder="What are you trying to solve or rethink?&#10;(e.g., repositioning, new market entry, portfolio clarity, narrative reset)"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={4}
+                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-body text-white placeholder-white/50 focus:outline-none focus:border-white/40 focus:ring-2 focus:ring-aurora-blue-400/30 transition-all resize-none backdrop-blur-sm"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full border border-white/40 text-white font-medium text-cta px-6 py-3 rounded-lg hover:border-white/60 hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
+                  >
+                    Request a Conversation
+                  </button>
+                  <p className="font-light text-small text-white/60 text-center mt-4">
+                    We typically respond within 48 hours.
+                  </p>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  )
+}
