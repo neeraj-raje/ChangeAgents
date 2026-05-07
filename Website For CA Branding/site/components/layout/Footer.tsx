@@ -14,7 +14,6 @@ const col2 = [
 
 const col3 = [
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
 ]
 
 function NavColumn({ links }: { links: { href: string; label: string }[] }) {

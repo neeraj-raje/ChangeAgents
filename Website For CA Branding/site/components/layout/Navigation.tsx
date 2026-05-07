@@ -12,6 +12,7 @@ const navLinks = [
   { label: 'Communications', href: '/communications' },
   { label: 'The Collective', href: '/the-collective' },
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Navigation() {
@@ -32,39 +33,31 @@ export default function Navigation() {
   return (
     <>
       <header
-        className={`font-sohne fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`font-sohne transition-all duration-300 ${
           scrolled
-            ? 'bg-ground/95 backdrop-blur-sm border-b border-rule'
+            ? 'bg-ground/95 backdrop-blur-sm'
             : 'bg-ground'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex items-center justify-between h-28">
 
-            {/* Left: Logo */}
-            <Link href="/" className="flex-shrink-0" aria-label="Change Agents — Home">
-              <Image
-                src="/assets/logo/ChangeAgents_Logo_new.png"
-                alt="Change Agents"
-                width={312}
-                height={94}
-              />
-            </Link>
+          {/* Top Row: Logo + Tagline */}
+          <div className="flex items-end justify-between py-4 border-b border-rule">
+            <div className="flex items-end gap-6">
+              <Link href="/" className="flex-shrink-0" aria-label="Change Agents — Home">
+                <Image
+                  src="/assets/logo/ChangeAgents_Logo_new.png"
+                  alt="Change Agents"
+                  width={359}
+                  height={108}
+                />
+              </Link>
+              <div className="hidden lg:block text-sm text-muted font-light whitespace-nowrap mb-1">
+                STRATEGIC ADVISORY FOR ENTERPRISE TECHNOLOGY
+              </div>
+            </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8" aria-label="Site navigation">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-ink hover:opacity-60 transition-opacity duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Right: Hamburger (mobile only) */}
+            {/* Hamburger menu - mobile only */}
             <button
               onClick={() => setMenuOpen(true)}
               className="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] flex-shrink-0"
@@ -75,6 +68,25 @@ export default function Navigation() {
               <span className="block w-5 h-px bg-ink" />
             </button>
           </div>
+
+          {/* Menu Row: Navigation items - Left aligned */}
+          <nav
+            className="hidden lg:flex justify-start items-center py-4 space-x-10"
+            aria-label="Site navigation"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-base text-ink hover:opacity-60 transition-opacity duration-200 whitespace-nowrap"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Bottom divider */}
+          <div className="hidden lg:block border-b border-rule" />
         </div>
       </header>
 
@@ -89,14 +101,14 @@ export default function Navigation() {
             className="font-sohne fixed inset-0 z-50 bg-ground flex flex-col"
           >
             {/* Overlay header */}
-            <div className="flex items-center justify-between px-6 lg:px-10 h-28">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-rule">
               <Link href="/" onClick={() => setMenuOpen(false)} aria-label="Change Agents — Home">
                 <Image
                   src="/assets/logo/ChangeAgents_Logo_new.png"
                   alt="Change Agents"
-                  width={312}
-                  height={94}
-                  className="h-[3.25rem] w-auto object-contain"
+                  width={359}
+                  height={108}
+                  className="h-[4.25rem] w-auto object-contain"
                 />
               </Link>
               <button
@@ -110,7 +122,7 @@ export default function Navigation() {
 
             {/* Nav links */}
             <nav
-              className="flex flex-col justify-center flex-1 px-10 lg:px-20 gap-6"
+              className="flex flex-col justify-start flex-1 px-6 py-6 gap-4"
               aria-label="Site navigation"
             >
               {navLinks.map((link, i) => (
@@ -123,19 +135,32 @@ export default function Navigation() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="font-light text-title text-ink opacity-80 hover:opacity-100 transition-opacity duration-200 block"
+                    className="text-base text-ink hover:opacity-60 transition-opacity duration-200 block"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Contact in mobile menu */}
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.06, duration: 0.3, ease: 'easeOut' }}
+              >
+                <Link
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-base text-ink hover:opacity-60 transition-opacity duration-200 block"
+                >
+                  Contact
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Spacer to push content below fixed nav */}
-      <div className="h-28" />
     </>
   )
 }
