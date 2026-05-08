@@ -51,7 +51,7 @@ export default function AuroraHero() {
           >
             <motion.h1
               variants={fadeUp}
-              className="font-bold text-display text-white font-serif-headline"
+              className="font-bold text-display text-white"
               style={{ fontSize: 'calc(3.5rem + 7px)' }}
             >
               Shaping Enterprise

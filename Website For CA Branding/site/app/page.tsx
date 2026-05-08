@@ -62,7 +62,7 @@ export default function HomePage() {
           <FadeInSection className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Column */}
             <div>
-              <h2 className="font-bold text-title text-ink font-serif-headline">
+              <h2 className="font-bold text-title text-ink ">
                 Strategy precedes visibility.
               </h2>
               <p className="font-normal text-lead text-ink mt-8">
@@ -109,7 +109,7 @@ export default function HomePage() {
                 key={area.label}
                 className="pt-8 lg:pt-0 lg:px-10 first:lg:pl-0 last:lg:pr-0"
               >
-                <p className="font-medium text-[1.375rem] text-ink font-serif-headline">
+                <p className="font-medium text-[1.375rem] text-ink ">
                   {area.label}
                 </p>
                 <p className="font-normal text-body text-muted mt-4">

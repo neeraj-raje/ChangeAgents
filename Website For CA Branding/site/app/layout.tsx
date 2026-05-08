@@ -1,15 +1,8 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import { Newsreader } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
-
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  variable: '--font-newsreader',
-  display: 'swap',
-})
 
 const sohne = localFont({
   src: [
@@ -35,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${sohne.variable} ${newsreader.variable}`}>
+    <html lang="en" className={`${sohne.variable}`}>
       <body className="font-sohne bg-ground text-ink antialiased">
         <Navigation />
         <main>{children}</main>
