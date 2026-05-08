@@ -8,12 +8,13 @@ const col1 = [
 ]
 
 const col2 = [
-  { href: '/communications', label: 'Communications' },
+  { href: '/communications', label: 'PR & Communications' },
   { href: '/the-collective', label: 'The Collective' },
 ]
 
 const col3 = [
   { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 function NavColumn({ links }: { links: { href: string; label: string }[] }) {
@@ -35,7 +36,7 @@ function NavColumn({ links }: { links: { href: string; label: string }[] }) {
 
 export default function Footer() {
   return (
-    <footer className="font-sohne bg-ink text-white">
+    <footer className="font-sohne bg-[#0B1F33] text-white">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
 
         {/* Logo + nav grid */}

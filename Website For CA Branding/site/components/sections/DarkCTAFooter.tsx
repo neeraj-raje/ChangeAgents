@@ -10,7 +10,7 @@ export default function DarkCTAFooter() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section className="bg-gradient-to-br from-slate-900 via-aurora-blue-900 to-slate-900 px-6 lg:px-8 py-24 lg:py-32 relative overflow-hidden">
+    <section className="bg-[#223548] px-6 lg:px-8 py-24 lg:py-32 relative overflow-hidden">
       {/* Subtle aurora glow background */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 right-0 w-96 h-96 bg-aurora-blue-500 rounded-full blur-3xl"></div>

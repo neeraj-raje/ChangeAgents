@@ -32,62 +32,53 @@ export default function Navigation() {
 
   return (
     <>
-      <header
-        className={`font-sohne transition-all duration-300 ${
-          scrolled
-            ? 'bg-ground/95 backdrop-blur-sm'
-            : 'bg-ground'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-
-          {/* Top Row: Logo + Tagline */}
-          <div className="flex items-end justify-between py-4 border-b border-rule">
-            <div className="flex items-end gap-6">
-              <Link href="/" className="flex-shrink-0" aria-label="Change Agents — Home">
-                <Image
-                  src="/assets/logo/ChangeAgents_Logo_new.png"
-                  alt="Change Agents"
-                  width={359}
-                  height={108}
-                />
-              </Link>
-              <div className="hidden lg:block text-sm text-muted font-light whitespace-nowrap mb-1">
-                STRATEGIC ADVISORY FOR ENTERPRISE TECHNOLOGY
-              </div>
+      <header className={`font-sohne transition-all duration-300 ${scrolled ? 'bg-ground/95 backdrop-blur-sm' : 'bg-ground'}`}>
+        {/* Top Row: Logo + Tagline */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-end justify-between py-4">
+          <div className="flex items-end gap-6">
+            <Link href="/" className="flex-shrink-0" aria-label="Change Agents — Home">
+              <Image
+                src="/assets/logo/ChangeAgents_Logo_new.png"
+                alt="Change Agents"
+                width={359}
+                height={108}
+              />
+            </Link>
+            <div className="hidden lg:block text-sm text-muted font-light whitespace-nowrap mb-1">
+              STRATEGIC ADVISORY FOR ENTERPRISE TECHNOLOGY
             </div>
-
-            {/* Hamburger menu - mobile only */}
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] flex-shrink-0"
-              aria-label="Open menu"
-            >
-              <span className="block w-7 h-px bg-ink" />
-              <span className="block w-7 h-px bg-ink" />
-              <span className="block w-5 h-px bg-ink" />
-            </button>
           </div>
 
-          {/* Menu Row: Navigation items - Left aligned */}
-          <nav
-            className="hidden lg:flex justify-start items-center py-4 space-x-10"
-            aria-label="Site navigation"
+          {/* Hamburger menu - mobile only */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="lg:hidden flex flex-col justify-center items-center w-11 h-11 gap-[6px] flex-shrink-0"
+            aria-label="Open menu"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-base text-ink hover:opacity-60 transition-opacity duration-200 whitespace-nowrap"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Bottom divider */}
-          <div className="hidden lg:block border-b border-rule" />
+            <span className="block w-7 h-px bg-ink" />
+            <span className="block w-7 h-px bg-ink" />
+            <span className="block w-5 h-px bg-ink" />
+          </button>
         </div>
+
+        {/* Full-width divider after logo */}
+        <div className="border-b border-rule"></div>
+
+        {/* Menu Row: Navigation items - Left aligned */}
+        <nav className="hidden lg:flex justify-start items-center max-w-7xl mx-auto px-6 lg:px-10 py-4 space-x-10" aria-label="Site navigation">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-base text-[#52606D] hover:opacity-60 transition-opacity duration-200 whitespace-nowrap"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Full-width divider after menu */}
+        <div className="border-b border-rule hidden lg:block"></div>
       </header>
 
       {/* Full-screen menu overlay */}
