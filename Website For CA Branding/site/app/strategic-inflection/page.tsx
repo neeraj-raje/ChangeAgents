@@ -21,7 +21,7 @@ At critical moments, positioning decisions carry disproportionate impact.
 
 We work with leaders and firms during high-stakes transitions where clarity, timing, and narrative alignment are essential.`}
         bgColor="#EEE8DF"
-        auroraGradient="radial-gradient(ellipse 1000px 600px at 50% -50%, #FFB84D 0%, #FF9D3D 30%, #E8764A 50%, transparent 75%)"
+        auroraGradient="linear-gradient(135deg, rgba(216, 155, 106, 0.4) 0%, rgba(232, 184, 150, 0.3) 50%, rgba(240, 212, 181, 0.4) 100%)"
         textColor="dark"
       />
 

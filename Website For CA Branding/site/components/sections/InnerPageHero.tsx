@@ -55,15 +55,12 @@ export default function InnerPageHero({
       {auroraGradient && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
-            className="absolute inset-0 opacity-80 blur-2xl"
+            className="aurora-overlay absolute inset-0 opacity-80 blur-xl"
             style={{
-              background: auroraGradient,
-            }}
-          />
-          <div
-            className="absolute inset-0 opacity-60 blur-3xl"
-            style={{
-              background: auroraGradient,
+              backgroundImage: auroraGradient,
+              backgroundSize: '300% 100%',
+              backgroundPosition: '0% 0%',
+              willChange: 'background-position',
             }}
           />
         </div>

@@ -50,4 +50,16 @@
     letter-spacing: 0.12em;
   }
 
+  @keyframes aurora-scroll {
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 300% 0%;
+    }
+  }
+
+  .aurora-overlay {
+    animation: aurora-scroll 60s linear infinite;
+  }
 }
