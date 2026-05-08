@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion, type Variants } from 'framer-motion'
+import { cn } from '@/lib/utils'
 import CTAButton from '@/components/ui/CTAButton'
 
 interface InnerPageHeroProps {
@@ -14,6 +15,8 @@ interface InnerPageHeroProps {
   bgColor?: string
   auroraHighlight?: string
   auroraMid?: string
+  auroraGradient?: string
+  textColor?: 'light' | 'dark'
 }
 
 const fadeUp: Variants = {
@@ -31,17 +34,41 @@ export default function InnerPageHero({
   bgColor = '#2C3E50',
   auroraHighlight = 'rgba(75, 100, 117, 0.3)',
   auroraMid = 'rgba(36, 56, 68, 0.15)',
+  auroraGradient,
+  textColor = 'light',
 }: InnerPageHeroProps) {
   const boxShadowStyle = `inset 0 0 200px 100px ${auroraHighlight}, inset 200px 0 300px 150px ${auroraHighlight.replace('0.3', '0.2')}, inset 0 200px 300px 150px ${auroraMid}`;
+
+  const isLightBg = textColor === 'dark';
 
   return (
     <section
       className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden"
       style={{
         backgroundColor: bgColor,
-        boxShadow: boxShadowStyle
+        ...(auroraGradient ? {} : { boxShadow: boxShadowStyle }),
+        ...(auroraGradient ? {
+          '--aurora': auroraGradient,
+        } as React.CSSProperties : {})
       }}
     >
+      {auroraGradient && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div
+            className="absolute inset-0 opacity-60 blur-2xl"
+            style={{
+              background: auroraGradient,
+            }}
+          />
+          <div
+            className="absolute inset-0 opacity-40 blur-3xl"
+            style={{
+              background: auroraGradient,
+            }}
+          />
+        </div>
+      )}
+
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
           className="mx-auto text-center max-w-4xl"
@@ -52,7 +79,10 @@ export default function InnerPageHero({
           {eyebrow && (
             <motion.p
               variants={fadeUp}
-              className="font-light text-small text-white/60 uppercase tracking-label mb-6"
+              className={cn(
+                "font-light text-small uppercase tracking-label mb-6",
+                isLightBg ? "text-[#52606D]" : "text-white/60"
+              )}
             >
               {eyebrow}
             </motion.p>
@@ -60,7 +90,10 @@ export default function InnerPageHero({
 
           <motion.h1
             variants={fadeUp}
-            className="font-bold text-white"
+            className={cn(
+              "font-bold",
+              isLightBg ? "text-[#111827]" : "text-white"
+            )}
             style={{ fontSize: 'calc(3.5rem + 7px)' }}
           >
             {heading}
@@ -68,7 +101,10 @@ export default function InnerPageHero({
 
           <motion.div variants={fadeUp} className="mt-6 space-y-4 max-w-3xl mx-auto">
             {lead.split('\n\n').filter(Boolean).map((para, i) => (
-              <p key={i} className="font-normal text-lead text-white/70">
+              <p key={i} className={cn(
+                "font-normal text-lead",
+                isLightBg ? "text-[#52606D]" : "text-white/70"
+              )}>
                 {para.trim()}
               </p>
             ))}
@@ -76,7 +112,12 @@ export default function InnerPageHero({
 
           {showCTA && (
             <motion.div variants={fadeUp} className="mt-10 flex justify-center">
-              <Link href={ctaHref} className="inline-block font-medium text-cta px-6 py-3 border rounded transition-all duration-200 border-white/60 text-white bg-white/10 hover:bg-white/20">
+              <Link href={ctaHref} className={cn(
+                "inline-block font-medium text-cta px-6 py-3 border rounded transition-all duration-200",
+                isLightBg
+                  ? "border-[#52606D] text-[#111827] bg-white/20 hover:bg-white/30"
+                  : "border-white/60 text-white bg-white/10 hover:bg-white/20"
+              )}>
                 {ctaText} &rarr;
               </Link>
             </motion.div>
