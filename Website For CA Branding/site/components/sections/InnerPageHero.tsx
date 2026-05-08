@@ -29,46 +29,13 @@ export default function InnerPageHero({
   bgColor = '#2C3E50',
 }: InnerPageHeroProps) {
   return (
-    <section className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: bgColor }}>
-      {/* Radial lighting layers */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Accent glow - from top right */}
-        <div
-          className="absolute -top-1/2 -right-1/4 w-full h-full pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 900px 700px at 120% 10%, rgba(75, 100, 117, 0.25) 0%, rgba(75, 100, 117, 0.08) 35%, transparent 65%)',
-            filter: 'blur(60px)',
-          }}
-        ></div>
-
-        {/* Mid-tone center highlight */}
-        <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 700px 600px at 50% 50%, rgba(36, 56, 68, 0.15) 0%, rgba(36, 56, 68, 0.04) 45%, transparent 75%)',
-            filter: 'blur(80px)',
-          }}
-        ></div>
-
-        {/* Top right accent glow */}
-        <div
-          className="absolute -top-1/4 right-0 w-full h-96 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 600px 500px at 85% -20%, rgba(75, 100, 117, 0.2) 0%, transparent 50%)',
-            filter: 'blur(100px)',
-          }}
-        ></div>
-
-        {/* Bottom shadow depth */}
-        <div
-          className="absolute -bottom-1/3 left-0 w-full h-full pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 500px 400px at 50% 120%, rgba(12, 19, 25, 0.12) 0%, transparent 60%)',
-            filter: 'blur(80px)',
-          }}
-        ></div>
-      </div>
-
+    <section
+      className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden"
+      style={{
+        backgroundColor: bgColor,
+        boxShadow: 'inset 0 0 200px 100px rgba(75, 100, 117, 0.3), inset 200px 0 300px 150px rgba(75, 100, 117, 0.2), inset 0 200px 300px 150px rgba(36, 56, 68, 0.15)'
+      }}
+    >
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
           className="mx-auto text-center max-w-4xl"
