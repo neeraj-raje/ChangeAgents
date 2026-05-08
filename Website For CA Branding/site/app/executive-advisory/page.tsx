@@ -19,6 +19,8 @@ export default function ExecutiveAdvisoryPage() {
         lead={`Market architecture is the structural foundation that determines how a firm — or its leadership — is positioned, perceived, and placed within a competitive market.
 
 We work with founders, CEOs, and senior leaders to clarify how they are positioned within their industry — and how that positioning translates into influence, opportunity, and long-term relevance.`}
+        bgColor="#14232D"
+        auroraGradient="repeating-linear-gradient(100deg,#0C1319_10%,#14232D_15%,#243844_20%,#4B6475_25%,#243844_30%)"
       />
 
       {/* When This Matters */}

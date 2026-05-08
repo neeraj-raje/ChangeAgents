@@ -11,6 +11,8 @@ interface InnerPageHeroProps {
   showCTA?: boolean
   ctaHref?: string
   ctaText?: string
+  bgColor?: string
+  auroraGradient?: string
 }
 
 const fadeUp: Variants = {
@@ -25,22 +27,22 @@ export default function InnerPageHero({
   showCTA = true,
   ctaHref = '/contact',
   ctaText = 'Request a Conversation',
+  bgColor = '#2C3E50',
+  auroraGradient = 'repeating-linear-gradient(100deg,#4a6fa5_10%,#6b8ec8_15%,#5a7fa8_20%,#7b9fc8_25%,#5a8fba_30%)',
 }: InnerPageHeroProps) {
   return (
-    <section className="relative bg-[#2C3E50] px-6 lg:px-8 py-24 lg:py-32 overflow-hidden">
-      {/* Subtle light aurora shimmer — top-right quadrant only */}
+    <section className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: bgColor }} >
+      <div style={{
+        '--aurora': auroraGradient,
+        '--dark-gradient': 'repeating-linear-gradient(100deg,#1a2a3a_0%,#1a2a3a_7%,transparent_10%,transparent_12%,#1a2a3a_16%)',
+        '--white-gradient': 'repeating-linear-gradient(100deg,#fff_0%,#fff_7%,transparent_10%,transparent_12%,#fff_16%)',
+      } as React.CSSProperties}>
+      {/* Aurora effect — customizable colors per page */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute -inset-[10px] opacity-[0.07] blur-[24px] will-change-transform animate-aurora"
-          style={{
-            backgroundImage:
-              'repeating-linear-gradient(100deg,#3b82f6_10%,#a5b4fc_15%,#93c5fd_20%,#ddd6fe_25%,#60a5fa_30%)',
-            backgroundSize: '300% 200%',
-            maskImage: 'radial-gradient(ellipse at 90% 10%, black 10%, transparent 65%)',
-            WebkitMaskImage:
-              'radial-gradient(ellipse at 90% 10%, black 10%, transparent 65%)',
-          }}
-        />
+          className="pointer-events-none absolute -inset-[10px] [background-image:var(--white-gradient),var(--aurora)] [background-size:300%,_200%] [background-position:50%_50%,50%_50%] opacity-30 blur-[24px] will-change-transform after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] after:[background-size:200%,_100%] after:[background-attachment:fixed] after:mix-blend-multiply after:content-[''] after:pointer-events-none [mask-image:radial-gradient(ellipse_at_90%_10%,black_10%,transparent_70%)]"
+        ></div>
+      </div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -61,7 +63,8 @@ export default function InnerPageHero({
 
           <motion.h1
             variants={fadeUp}
-            className="font-bold text-title text-white"
+            className="font-bold text-white"
+            style={{ fontSize: 'calc(3.5rem + 7px)' }}
           >
             {heading}
           </motion.h1>
