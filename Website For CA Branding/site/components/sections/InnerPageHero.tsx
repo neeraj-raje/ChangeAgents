@@ -12,6 +12,8 @@ interface InnerPageHeroProps {
   ctaHref?: string
   ctaText?: string
   bgColor?: string
+  auroraHighlight?: string
+  auroraMid?: string
 }
 
 const fadeUp: Variants = {
@@ -27,13 +29,17 @@ export default function InnerPageHero({
   ctaHref = '/contact',
   ctaText = 'Request a Conversation',
   bgColor = '#2C3E50',
+  auroraHighlight = 'rgba(75, 100, 117, 0.3)',
+  auroraMid = 'rgba(36, 56, 68, 0.15)',
 }: InnerPageHeroProps) {
+  const boxShadowStyle = `inset 0 0 200px 100px ${auroraHighlight}, inset 200px 0 300px 150px ${auroraHighlight.replace('0.3', '0.2')}, inset 0 200px 300px 150px ${auroraMid}`;
+
   return (
     <section
       className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden"
       style={{
         backgroundColor: bgColor,
-        boxShadow: 'inset 0 0 200px 100px rgba(75, 100, 117, 0.3), inset 200px 0 300px 150px rgba(75, 100, 117, 0.2), inset 0 200px 300px 150px rgba(36, 56, 68, 0.15)'
+        boxShadow: boxShadowStyle
       }}
     >
       <div className="relative z-10 max-w-6xl mx-auto">
