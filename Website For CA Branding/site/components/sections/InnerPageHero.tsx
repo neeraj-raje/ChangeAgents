@@ -27,7 +27,7 @@ export default function InnerPageHero({
   ctaText = 'Request a Conversation',
 }: InnerPageHeroProps) {
   return (
-    <section className="relative bg-ground px-6 lg:px-8 py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-[#2C3E50] px-6 lg:px-8 py-24 lg:py-32 overflow-hidden">
       {/* Subtle light aurora shimmer — top-right quadrant only */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -53,7 +53,7 @@ export default function InnerPageHero({
           {eyebrow && (
             <motion.p
               variants={fadeUp}
-              className="font-light text-small text-ink/50 uppercase tracking-label mb-6"
+              className="font-light text-small text-white/60 uppercase tracking-label mb-6"
             >
               {eyebrow}
             </motion.p>
@@ -61,14 +61,14 @@ export default function InnerPageHero({
 
           <motion.h1
             variants={fadeUp}
-            className="font-bold text-title text-ink"
+            className="font-bold text-title text-white"
           >
             {heading}
           </motion.h1>
 
           <motion.div variants={fadeUp} className="mt-6 space-y-4 max-w-3xl mx-auto">
             {lead.split('\n\n').filter(Boolean).map((para, i) => (
-              <p key={i} className="font-normal text-lead text-muted">
+              <p key={i} className="font-normal text-lead text-white/70">
                 {para.trim()}
               </p>
             ))}
@@ -76,17 +76,12 @@ export default function InnerPageHero({
 
           {showCTA && (
             <motion.div variants={fadeUp} className="mt-10 flex justify-center">
-              <Link href={ctaHref} className="inline-block font-medium text-cta px-6 py-3 border rounded transition-all duration-200 border-[#111827] text-[#111827] hover:bg-[#111827] hover:text-white">
+              <Link href={ctaHref} className="inline-block font-medium text-cta px-6 py-3 border rounded transition-all duration-200 border-white/60 text-white bg-white/10 hover:bg-white/20">
                 {ctaText} &rarr;
               </Link>
             </motion.div>
           )}
         </motion.div>
-      </div>
-
-      {/* Bottom rule */}
-      <div className="relative z-10 max-w-6xl mx-auto mt-16">
-        <hr className="border-t border-rule" />
       </div>
     </section>
   )
