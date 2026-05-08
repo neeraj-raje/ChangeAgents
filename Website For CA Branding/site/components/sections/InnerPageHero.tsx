@@ -12,7 +12,6 @@ interface InnerPageHeroProps {
   ctaHref?: string
   ctaText?: string
   bgColor?: string
-  auroraGradient?: string
 }
 
 const fadeUp: Variants = {
@@ -28,21 +27,46 @@ export default function InnerPageHero({
   ctaHref = '/contact',
   ctaText = 'Request a Conversation',
   bgColor = '#2C3E50',
-  auroraGradient = 'repeating-linear-gradient(100deg,#4a6fa5_10%,#6b8ec8_15%,#5a7fa8_20%,#7b9fc8_25%,#5a8fba_30%)',
 }: InnerPageHeroProps) {
   return (
-    <section className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: bgColor }} >
-      <div style={{
-        '--aurora': auroraGradient,
-        '--dark-gradient': 'repeating-linear-gradient(100deg,#1a2a3a_0%,#1a2a3a_7%,transparent_10%,transparent_12%,#1a2a3a_16%)',
-        '--white-gradient': 'repeating-linear-gradient(100deg,#fff_0%,#fff_7%,transparent_10%,transparent_12%,#fff_16%)',
-      } as React.CSSProperties}>
-      {/* Aurora effect — customizable colors per page */}
+    <section className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: bgColor }}>
+      {/* Subtle radial lighting layers */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Base atmospheric glow - warm accent from top right */}
         <div
-          className="pointer-events-none absolute -inset-[10px] [background-image:var(--white-gradient),var(--aurora)] [background-size:300%,_200%] [background-position:50%_50%,50%_50%] opacity-30 blur-[24px] will-change-transform after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] after:[background-size:200%,_100%] after:[background-attachment:fixed] after:mix-blend-multiply after:content-[''] after:pointer-events-none [mask-image:radial-gradient(ellipse_at_90%_10%,black_10%,transparent_70%)]"
+          className="absolute -top-1/2 -right-1/4 w-full h-full rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 800px 600px at 120% 20%, rgba(75, 100, 117, 0.12) 0%, rgba(75, 100, 117, 0.04) 40%, transparent 70%)',
+            filter: 'blur(80px)',
+          }}
         ></div>
-      </div>
+
+        {/* Mid-tone atmospheric highlight - subtle center glow */}
+        <div
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 600px 500px at 50% 40%, rgba(36, 56, 68, 0.08) 0%, rgba(36, 56, 68, 0.02) 50%, transparent 80%)',
+            filter: 'blur(100px)',
+          }}
+        ></div>
+
+        {/* Accent lighting - subtle bright spot */}
+        <div
+          className="absolute -top-1/3 right-1/3 w-96 h-96 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 500px 400px at 100% 0%, rgba(75, 100, 117, 0.06) 0%, transparent 60%)',
+            filter: 'blur(120px)',
+          }}
+        ></div>
+
+        {/* Shadow depth layer - subtle darkening at bottom */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-1/2 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 400px 300px at 50% 100%, rgba(12, 19, 25, 0.04) 0%, transparent 70%)',
+            filter: 'blur(80px)',
+          }}
+        ></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
