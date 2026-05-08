@@ -24,7 +24,7 @@ function NavColumn({ links }: { links: { href: string; label: string }[] }) {
         <li key={link.href}>
           <Link
             href={link.href}
-            className="text-sm text-white no-underline hover:opacity-60 transition-opacity"
+            className="text-sm text-[#E8EDF2] no-underline hover:opacity-60 transition-opacity"
           >
             {link.label}
           </Link>
@@ -60,7 +60,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="flex justify-center border-t border-white border-opacity-10 pt-8">
-          <p className="font-light text-small text-white opacity-40">
+          <p className="font-light text-small text-[#A9BAC8]">
             &copy; 2025 Change Agents. All rights reserved. India.
           </p>
         </div>

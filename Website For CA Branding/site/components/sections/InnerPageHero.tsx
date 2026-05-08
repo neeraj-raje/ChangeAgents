@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion, type Variants } from 'framer-motion'
 import CTAButton from '@/components/ui/CTAButton'
 
@@ -75,9 +76,9 @@ export default function InnerPageHero({
 
           {showCTA && (
             <motion.div variants={fadeUp} className="mt-10 flex justify-center">
-              <CTAButton href={ctaHref}>
+              <Link href={ctaHref} className="inline-block font-medium text-cta px-6 py-3 border rounded transition-all duration-200 border-[#111827] text-[#111827] hover:bg-[#111827] hover:text-white">
                 {ctaText} &rarr;
-              </CTAButton>
+              </Link>
             </motion.div>
           )}
         </motion.div>

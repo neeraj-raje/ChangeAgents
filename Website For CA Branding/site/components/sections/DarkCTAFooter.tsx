@@ -27,10 +27,10 @@ export default function DarkCTAFooter() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side */}
           <div>
-            <h2 className="font-medium text-heading text-white">
+            <h2 className="font-medium text-heading text-[#F3F6F8]">
               Limited Engagements. Serious Conversations.
             </h2>
-            <p className="font-normal text-lead text-white/70 mt-8">
+            <p className="font-normal text-lead text-[#A9BAC8] mt-8" style={{ lineHeight: '1.75', letterSpacing: '-0.01em' }}>
               We work with a small number of enterprise leaders each year. Engagement begins with a
               confidential exploratory discussion.
             </p>
