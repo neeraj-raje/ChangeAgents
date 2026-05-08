@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Executive Advisory', href: '/executive-advisory' },
   { label: 'Company Advisory', href: '/company-advisory' },
   { label: 'Strategic Inflection', href: '/strategic-inflection' },
-  { label: 'Communications', href: '/communications' },
+  { label: 'PR & Communications', href: '/communications' },
   { label: 'The Collective', href: '/the-collective' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },

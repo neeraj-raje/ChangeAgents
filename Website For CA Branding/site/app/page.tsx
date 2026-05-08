@@ -57,12 +57,12 @@ export default function HomePage() {
       <AuroraHero />
 
       {/* Strategic Statement */}
-      <section className="bg-ground px-6 lg:px-8 py-24 lg:py-28">
+      <section className="bg-ground px-6 lg:px-8 pt-24 lg:pt-28 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
           <FadeInSection className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Column */}
             <div>
-              <h2 className="font-bold text-title text-ink">
+              <h2 className="font-bold text-title text-ink font-serif-headline">
                 Strategy precedes visibility.
               </h2>
               <p className="font-normal text-lead text-ink mt-8">
@@ -96,7 +96,7 @@ export default function HomePage() {
       <HorizontalRule className="max-w-6xl mx-auto" />
 
       {/* Focus Areas */}
-      <section className="bg-white px-6 lg:px-8 py-24 lg:py-32">
+      <section className="bg-white px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
           <FadeInSection className="mb-12">
             <h2 className="font-bold text-title text-ink">
@@ -109,7 +109,7 @@ export default function HomePage() {
                 key={area.label}
                 className="pt-8 lg:pt-0 lg:px-10 first:lg:pl-0 last:lg:pr-0"
               >
-                <p className="font-medium text-[1.125rem] text-ink">
+                <p className="font-medium text-[1.375rem] text-ink font-serif-headline">
                   {area.label}
                 </p>
                 <p className="font-normal text-body text-muted mt-4">
@@ -122,7 +122,7 @@ export default function HomePage() {
                 )}
                 <Link
                   href={area.href}
-                  className="inline-block font-medium text-cta text-aurora-blue-600 mt-6 hover:text-aurora-blue-500 transition-colors duration-200"
+                  className="inline-block font-normal text-cta text-aurora-blue-600 mt-6 hover:text-aurora-blue-500 transition-colors duration-200"
                 >
                   Explore &rarr;
                 </Link>
@@ -135,7 +135,7 @@ export default function HomePage() {
       <HorizontalRule className="max-w-6xl mx-auto" />
 
       {/* Founder Statement */}
-      <section className="bg-gradient-to-b from-aurora-blue-50 to-white px-6 lg:px-8 py-24 lg:py-32">
+      <section className="bg-gradient-to-b from-aurora-blue-50 to-white px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -169,21 +169,24 @@ export default function HomePage() {
 
       <HorizontalRule className="max-w-6xl mx-auto" />
 
-      {/* Integrated Communications */}
-      <section className="bg-white px-6 lg:px-8 py-24 lg:py-32">
+      {/* PR & Integrated Communications */}
+      <section className="bg-white px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
-          <FadeInSection>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="bg-gradient-to-br from-aurora-blue-100 via-aurora-indigo-300 to-aurora-violet-300 border border-aurora-blue-300 rounded h-72"></div>
-              <div>
-                <h2 className="font-medium text-heading text-ink">
-                  Integrated Communications, When Required
-                </h2>
-                <div className="w-12 h-1 bg-gradient-to-r from-aurora-blue-400 to-aurora-violet-300 mt-4 mb-6"></div>
-                <p className="font-normal text-body text-muted max-w-[65ch] mt-2">
-                  Once market architecture is defined, we support its execution through media strategy, analyst engagement, and narrative activation.
-                </p>
-              </div>
+          <FadeInSection className="text-center">
+            <div className="max-w-[65ch] mx-auto">
+              <h2 className="font-medium text-heading text-ink">
+                PR & Integrated Communications
+              </h2>
+              <div className="w-12 h-1 bg-gradient-to-r from-aurora-blue-400 to-aurora-violet-300 mt-4 mb-6 mx-auto"></div>
+              <p className="font-normal text-body text-muted mt-4">
+                After defining the market architecture, we activate the narrative through media strategy and by engaging influencers and analysts.
+              </p>
+              <p className="font-normal text-body text-muted mt-4">
+                PR & Integrated communications aligns media, digital visibility, and strategic messaging into a cohesive narrative to build long term credibility and influence.
+              </p>
+              <p className="font-normal text-body text-muted mt-4">
+                The objective is not promotional campaigns, but sustained communication to create a consistent market perception.
+              </p>
             </div>
           </FadeInSection>
         </div>
@@ -192,12 +195,12 @@ export default function HomePage() {
       <HorizontalRule className="max-w-6xl mx-auto" />
 
       {/* Two Decades in Enterprise Technology */}
-      <section className="bg-white px-6 lg:px-8 py-24 lg:py-32">
+      <section className="bg-white px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
-                <h2 className="font-medium text-[1.5rem] text-ink">
+                <h2 className="font-medium text-heading text-ink">
                   Two Decades in Enterprise Technology
                 </h2>
                 <div className="w-12 h-1 bg-gradient-to-r from-aurora-blue-400 to-aurora-violet-300 mt-6 mb-6"></div>

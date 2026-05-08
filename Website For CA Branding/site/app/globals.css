@@ -49,4 +49,8 @@
   .tracking-label {
     letter-spacing: 0.12em;
   }
+
+  .font-serif-headline {
+    font-family: var(--font-newsreader);
+  }
 }
