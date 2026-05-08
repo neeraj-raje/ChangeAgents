@@ -30,40 +30,40 @@ export default function InnerPageHero({
 }: InnerPageHeroProps) {
   return (
     <section className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden" style={{ backgroundColor: bgColor }}>
-      {/* Subtle radial lighting layers */}
+      {/* Radial lighting layers */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Base atmospheric glow - warm accent from top right */}
+        {/* Accent glow - from top right */}
         <div
-          className="absolute -top-1/2 -right-1/4 w-full h-full rounded-full pointer-events-none"
+          className="absolute -top-1/2 -right-1/4 w-full h-full pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 800px 600px at 120% 20%, rgba(75, 100, 117, 0.12) 0%, rgba(75, 100, 117, 0.04) 40%, transparent 70%)',
+            background: 'radial-gradient(ellipse 900px 700px at 120% 10%, rgba(75, 100, 117, 0.25) 0%, rgba(75, 100, 117, 0.08) 35%, transparent 65%)',
+            filter: 'blur(60px)',
+          }}
+        ></div>
+
+        {/* Mid-tone center highlight */}
+        <div
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 700px 600px at 50% 50%, rgba(36, 56, 68, 0.15) 0%, rgba(36, 56, 68, 0.04) 45%, transparent 75%)',
             filter: 'blur(80px)',
           }}
         ></div>
 
-        {/* Mid-tone atmospheric highlight - subtle center glow */}
+        {/* Top right accent glow */}
         <div
-          className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none"
+          className="absolute -top-1/4 right-0 w-full h-96 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 600px 500px at 50% 40%, rgba(36, 56, 68, 0.08) 0%, rgba(36, 56, 68, 0.02) 50%, transparent 80%)',
+            background: 'radial-gradient(ellipse 600px 500px at 85% -20%, rgba(75, 100, 117, 0.2) 0%, transparent 50%)',
             filter: 'blur(100px)',
           }}
         ></div>
 
-        {/* Accent lighting - subtle bright spot */}
+        {/* Bottom shadow depth */}
         <div
-          className="absolute -top-1/3 right-1/3 w-96 h-96 pointer-events-none"
+          className="absolute -bottom-1/3 left-0 w-full h-full pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 500px 400px at 100% 0%, rgba(75, 100, 117, 0.06) 0%, transparent 60%)',
-            filter: 'blur(120px)',
-          }}
-        ></div>
-
-        {/* Shadow depth layer - subtle darkening at bottom */}
-        <div
-          className="absolute bottom-0 left-0 w-full h-1/2 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 400px 300px at 50% 100%, rgba(12, 19, 25, 0.04) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse 500px 400px at 50% 120%, rgba(12, 19, 25, 0.12) 0%, transparent 60%)',
             filter: 'blur(80px)',
           }}
         ></div>
