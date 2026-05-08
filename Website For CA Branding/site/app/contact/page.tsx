@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import ContactForm from '@/components/sections/ContactForm'
-import HorizontalRule from '@/components/ui/HorizontalRule'
 import SectionLabel from '@/components/ui/SectionLabel'
 
 export const metadata: Metadata = {
@@ -99,22 +98,22 @@ export default function ContactPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-white px-6 lg:px-8 py-20 lg:py-28">
+      <section className="bg-[#F6F3EE] px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-6xl mx-auto">
           <SectionLabel className="mb-10">TESTIMONIALS</SectionLabel>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-aurora-blue-50 border border-aurora-blue-100 rounded-lg p-8"
+                className="bg-[#E8DFD4] border border-[#A8927F] border-opacity-20 rounded-lg p-8"
               >
                 <blockquote>
-                  <p className="font-light italic text-body text-muted leading-relaxed mb-6">
+                  <p className="font-light italic text-body text-[#52606D] leading-relaxed mb-6">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <footer>
-                    <p className="font-medium text-small text-ink">{t.name}</p>
-                    <p className="font-normal text-small text-muted">{t.role}</p>
+                    <p className="font-medium text-small text-[#111827]">{t.name}</p>
+                    <p className="font-normal text-small text-[#52606D]">{t.role}</p>
                   </footer>
                 </blockquote>
               </div>
@@ -123,17 +122,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <HorizontalRule className="max-w-6xl mx-auto" />
-
       {/* FAQs */}
-      <section className="bg-ground px-6 lg:px-8 py-20 lg:py-28">
+      <section className="bg-[#E8E2D8] px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-6xl mx-auto">
           <SectionLabel className="mb-10">FREQUENTLY ASKED QUESTIONS</SectionLabel>
           <div className="space-y-8 max-w-3xl">
             {faqs.map((faq, i) => (
               <div key={i} className="border-b border-rule pb-8">
-                <h3 className="font-medium text-body text-ink mb-3">{faq.question}</h3>
-                <p className="font-normal text-body text-muted">{faq.answer}</p>
+                <h3 className="font-medium text-body text-[#111827] mb-3">{faq.question}</h3>
+                <p className="font-normal text-body text-[#52606D]">{faq.answer}</p>
               </div>
             ))}
           </div>

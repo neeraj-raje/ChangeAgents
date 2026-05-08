@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import InnerPageHero from '@/components/sections/InnerPageHero'
 import InnerCardGrid from '@/components/sections/InnerCardGrid'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
-import HorizontalRule from '@/components/ui/HorizontalRule'
 
 export const metadata: Metadata = {
   title: 'Strategic Inflection — Change Agents',
@@ -23,46 +22,38 @@ At critical moments, positioning decisions carry disproportionate impact.
 We work with leaders and firms during high-stakes transitions where clarity, timing, and narrative alignment are essential.`}
       />
 
-      <section className="bg-ground px-6 lg:px-8 py-20 lg:py-28">
-        <div className="max-w-6xl mx-auto space-y-16 lg:space-y-20">
+      {/* Typical Engagements */}
+      <section className="bg-[#F6F3EE] px-6 lg:px-8 py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-medium text-heading text-[#111827] mb-8 text-center">Typical Engagements</h2>
+          <InnerCardGrid
+            items={[
+              { title: 'Leadership transitions',                   body: '' },
+              { title: 'Market entry or expansion',                body: '' },
+              { title: 'M&A and pre/post acquisition positioning', body: '' },
+              { title: 'Crisis or reputation recalibration',       body: '' },
+              { title: 'Structural repositioning',                 body: '' },
+            ]}
+            cardBgColor="#E8DFD4"
+            tickColor="#A8927F"
+          />
+        </div>
+      </section>
 
-          {/* Typical Engagements */}
-          <div>
-            <h2 className="font-medium text-heading text-ink mb-4 text-center">Typical Engagements</h2>
-            <div
-              className="w-12 h-1 mx-auto mb-8 rounded"
-              style={{ background: 'linear-gradient(to right, #8AAB58, #C4D8A4)' }}
-            />
-            <InnerCardGrid
-              items={[
-                { title: 'Leadership transitions',                   body: '' },
-                { title: 'Market entry or expansion',                body: '' },
-                { title: 'M&A and pre/post acquisition positioning', body: '' },
-                { title: 'Crisis or reputation recalibration',       body: '' },
-                { title: 'Structural repositioning',                 body: '' },
-              ]}
-            />
-          </div>
-
-          <HorizontalRule />
-
-          {/* Nature of Work */}
-          <div>
-            <h2 className="font-medium text-heading text-ink mb-4 text-center">Nature of Work</h2>
-            <div
-              className="w-12 h-1 mx-auto mb-8 rounded"
-              style={{ background: 'linear-gradient(to right, #8AAB58, #C4D8A4)' }}
-            />
-            <InnerCardGrid
-              items={[
-                { title: 'Duration',    body: 'Short-duration, high-intensity' },
-                { title: 'Involvement', body: 'Direct founder involvement' },
-                { title: 'Character',   body: 'Confidential and context-driven' },
-                { title: 'Focus',       body: 'Focused on clarity, not volume' },
-              ]}
-            />
-          </div>
-
+      {/* Nature of Work */}
+      <section className="bg-[#E8E2D8] px-6 lg:px-8 py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-medium text-heading text-[#111827] mb-8 text-center">Nature of Work</h2>
+          <InnerCardGrid
+            items={[
+              { title: 'Duration',    body: 'Short-duration, high-intensity' },
+              { title: 'Involvement', body: 'Direct founder involvement' },
+              { title: 'Character',   body: 'Confidential and context-driven' },
+              { title: 'Focus',       body: 'Focused on clarity, not volume' },
+            ]}
+            cardBgColor="#D4CCBB"
+            tickColor="#8B7D67"
+          />
         </div>
       </section>
 

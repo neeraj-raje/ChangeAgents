@@ -3,7 +3,6 @@ import InnerPageHero from '@/components/sections/InnerPageHero'
 import InnerCardGrid from '@/components/sections/InnerCardGrid'
 import EngageSection from '@/components/sections/EngageSection'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
-import HorizontalRule from '@/components/ui/HorizontalRule'
 
 export const metadata: Metadata = {
   title: 'Company Advisory — Change Agents',
@@ -22,56 +21,50 @@ export default function CompanyAdvisoryPage() {
 We work with enterprise technology firms to define how they are positioned in competitive markets — beyond product messaging and marketing narratives.`}
       />
 
-      <section className="bg-ground px-6 lg:px-8 py-20 lg:py-28">
-        <div className="max-w-6xl mx-auto space-y-16 lg:space-y-20">
+      {/* Where We Focus */}
+      <section className="bg-[#F6F3EE] px-6 lg:px-8 py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-medium text-heading text-[#111827] mb-8 text-center">Where We Focus</h2>
+          <InnerCardGrid
+            items={[
+              { title: 'Category positioning and definition',    body: '' },
+              { title: 'Revenue narrative alignment',            body: '' },
+              { title: 'Competitive differentiation',            body: '' },
+              { title: 'India and global market positioning',    body: '' },
+              { title: 'Analyst and ecosystem perception',       body: '' },
+            ]}
+            cardBgColor="#E8DFD4"
+            tickColor="#A8927F"
+          />
+        </div>
+      </section>
 
-          {/* Where We Focus */}
-          <div>
-            <h2 className="font-medium text-heading text-ink mb-4 text-center">Where We Focus</h2>
-            <div
-              className="w-12 h-1 mx-auto mb-8 rounded"
-              style={{ background: 'linear-gradient(to right, #8AAB58, #C4D8A4)' }}
-            />
-            <InnerCardGrid
-              items={[
-                { title: 'Category positioning and definition',    body: '' },
-                { title: 'Revenue narrative alignment',            body: '' },
-                { title: 'Competitive differentiation',            body: '' },
-                { title: 'India and global market positioning',    body: '' },
-                { title: 'Analyst and ecosystem perception',       body: '' },
-              ]}
-            />
-          </div>
+      {/* Typical Situations */}
+      <section className="bg-[#E8E2D8] px-6 lg:px-8 py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-medium text-heading text-[#111827] mb-8 text-center">Typical Situations</h2>
+          <InnerCardGrid
+            items={[
+              { title: 'Scaling beyond early growth stage',                      body: '' },
+              { title: 'Entering new markets or segments',                       body: '' },
+              { title: 'Repositioning services or offerings',                    body: '' },
+              { title: 'Strengthening enterprise credibility',                   body: '' },
+              { title: 'Aligning leadership narrative with business strategy',   body: '' },
+            ]}
+            cardBgColor="#D4CCBB"
+            tickColor="#8B7D67"
+          />
+        </div>
+      </section>
 
-          <HorizontalRule />
-
-          {/* Typical Situations */}
-          <div>
-            <h2 className="font-medium text-heading text-ink mb-4 text-center">Typical Situations</h2>
-            <div
-              className="w-12 h-1 mx-auto mb-8 rounded"
-              style={{ background: 'linear-gradient(to right, #8AAB58, #C4D8A4)' }}
-            />
-            <InnerCardGrid
-              items={[
-                { title: 'Scaling beyond early growth stage',                      body: '' },
-                { title: 'Entering new markets or segments',                       body: '' },
-                { title: 'Repositioning services or offerings',                    body: '' },
-                { title: 'Strengthening enterprise credibility',                   body: '' },
-                { title: 'Aligning leadership narrative with business strategy',   body: '' },
-              ]}
-            />
-          </div>
-
-          <HorizontalRule />
-
-          {/* Our Approach */}
+      {/* Our Approach */}
+      <section className="bg-[#F5FBFF] px-6 lg:px-8 py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto">
           <EngageSection
             eyebrow="OUR APPROACH"
             heading="We operate upstream of communications."
             body="Clarifying the strategic foundation before visibility and messaging are executed."
           />
-
         </div>
       </section>
 
