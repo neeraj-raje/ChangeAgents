@@ -47,7 +47,10 @@ export default function AuroraHero() {
             className="mx-auto text-center max-w-4xl"
             initial="hidden"
             animate="visible"
-            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.1 } }
+            }}
           >
             <motion.h1
               variants={fadeUp}

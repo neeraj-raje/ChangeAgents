@@ -4,7 +4,6 @@ import Link from 'next/link'
 import InnerPageHero from '@/components/sections/InnerPageHero'
 import InnerCardGrid from '@/components/sections/InnerCardGrid'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
-import HorizontalRule from '@/components/ui/HorizontalRule'
 import SectionLabel from '@/components/ui/SectionLabel'
 
 export const metadata: Metadata = {

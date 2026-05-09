@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion, type Variants } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import CTAButton from '@/components/ui/CTAButton'
 
 interface InnerPageHeroProps {
   eyebrow?: string
