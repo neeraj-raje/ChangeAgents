@@ -1,13 +1,7 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import CTAButton from '@/components/ui/CTAButton'
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-}
 
 export default function AuroraHero() {
   return (
