@@ -1,32 +1,7 @@
-'use client'
-
-import { useRef } from 'react'
-import { motion, useInView, type Variants } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 import AuroraHero from '@/components/sections/AuroraHero'
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-}
-
-function FadeInSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={fadeUp}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
 
 const focusAreas = [
   {
@@ -58,7 +33,7 @@ export default function HomePage() {
       {/* Strategic Statement */}
       <section className="bg-[#F6F3EE] px-6 lg:px-8 pt-24 lg:pt-28 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
-          <FadeInSection className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Column */}
             <div>
               <h2 className="font-bold text-title text-[#111827] ">
@@ -88,7 +63,7 @@ export default function HomePage() {
                 That&apos;s where we work.
               </p>
             </div>
-          </FadeInSection>
+          </div>
         </div>
       </section>
 
@@ -98,14 +73,14 @@ export default function HomePage() {
       {/* Focus Areas */}
       <section className="bg-[#E8E2D8] px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
-          <FadeInSection className="mb-12">
+          <div className="mb-12">
             <h2 className="font-bold text-title text-[#111827]">
               Focus Areas
             </h2>
-          </FadeInSection>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-aurora-blue-100">
             {focusAreas.map((area) => (
-              <FadeInSection
+              <div
                 key={area.label}
                 className="pt-8 lg:pt-0 lg:px-10 first:lg:pl-0 last:lg:pr-0"
               >
@@ -126,7 +101,7 @@ export default function HomePage() {
                 >
                   Explore &rarr;
                 </Link>
-              </FadeInSection>
+              </div>
             ))}
           </div>
         </div>
@@ -138,7 +113,7 @@ export default function HomePage() {
       {/* Founder Statement */}
       <section className="bg-[#F5FBFF] px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
-          <FadeInSection>
+          <div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               <div className="lg:col-span-3">
                 <div className="rounded-lg overflow-hidden border-2 border-gray-300 shadow-sm">
@@ -163,7 +138,7 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-          </FadeInSection>
+          </div>
         </div>
       </section>
 
@@ -173,7 +148,7 @@ export default function HomePage() {
       {/* PR & Integrated Communications */}
       <section className="bg-[#F6F3EE] px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
-          <FadeInSection className="text-center">
+          <div className="text-center">
             <div className="max-w-[65ch] mx-auto">
               <h2 className="font-medium text-heading text-[#111827]">
                 PR & Integrated Communications
@@ -194,7 +169,7 @@ export default function HomePage() {
                 Explore &rarr;
               </Link>
             </div>
-          </FadeInSection>
+          </div>
         </div>
       </section>
 
@@ -204,7 +179,7 @@ export default function HomePage() {
       {/* Two Decades in Enterprise Technology */}
       <section className="bg-[#FAFBFC] px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
-          <FadeInSection>
+          <div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <h2 className="font-medium text-heading text-[#111827]">
@@ -216,7 +191,7 @@ export default function HomePage() {
               </div>
               <div className="bg-gradient-to-br from-aurora-blue-100 via-aurora-indigo-300 to-aurora-violet-300 border border-aurora-blue-300 rounded h-72"></div>
             </div>
-          </FadeInSection>
+          </div>
         </div>
       </section>
 

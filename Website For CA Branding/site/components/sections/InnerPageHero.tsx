@@ -1,7 +1,4 @@
-'use client'
-
 import Link from 'next/link'
-import { motion, type Variants } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 interface InnerPageHeroProps {
@@ -18,11 +15,6 @@ interface InnerPageHeroProps {
   textColor?: 'light' | 'dark'
 }
 
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-}
-
 export default function InnerPageHero({
   eyebrow = 'STRATEGIC ADVISORY  FOR ENTERPRISE TECHNOLOGY',
   heading,
@@ -36,9 +28,9 @@ export default function InnerPageHero({
   auroraGradient,
   textColor = 'light',
 }: InnerPageHeroProps) {
-  const boxShadowStyle = `inset 0 0 200px 100px ${auroraHighlight}, inset 200px 0 300px 150px ${auroraHighlight.replace('0.3', '0.2')}, inset 0 200px 300px 150px ${auroraMid}`;
+  const boxShadowStyle = `inset 0 0 200px 100px ${auroraHighlight}, inset 200px 0 300px 150px ${auroraHighlight.replace('0.3', '0.2')}, inset 0 200px 300px 150px ${auroraMid}`
 
-  const isLightBg = textColor === 'dark';
+  const isLightBg = textColor === 'dark'
 
   return (
     <section
@@ -46,9 +38,6 @@ export default function InnerPageHero({
       style={{
         backgroundColor: bgColor,
         ...(auroraGradient ? {} : { boxShadow: boxShadowStyle }),
-        ...(auroraGradient ? {
-          '--aurora': auroraGradient,
-        } as React.CSSProperties : {})
       }}
     >
       {auroraGradient && (
@@ -66,36 +55,24 @@ export default function InnerPageHero({
       )}
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <motion.div
-          className="mx-auto text-center max-w-4xl"
-          initial="hidden"
-          animate="visible"
-          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-        >
+        <div className="mx-auto text-center max-w-4xl">
           {eyebrow && (
-            <motion.p
-              variants={fadeUp}
-              className={cn(
-                "font-light text-small uppercase tracking-label mb-6",
-                isLightBg ? "text-[#52606D]" : "text-white/60"
-              )}
-            >
+            <p className={cn(
+              "font-light text-small uppercase tracking-label mb-6",
+              isLightBg ? "text-[#52606D]" : "text-white/60"
+            )}>
               {eyebrow}
-            </motion.p>
+            </p>
           )}
 
-          <motion.h1
-            variants={fadeUp}
-            className={cn(
-              "font-bold",
-              isLightBg ? "text-[#111827]" : "text-white"
-            )}
+          <h1
+            className={cn("font-bold", isLightBg ? "text-[#111827]" : "text-white")}
             style={{ fontSize: 'calc(3.5rem + 7px)' }}
           >
             {heading}
-          </motion.h1>
+          </h1>
 
-          <motion.div variants={fadeUp} className="mt-6 space-y-4 max-w-3xl mx-auto">
+          <div className="mt-6 space-y-4 max-w-3xl mx-auto">
             {lead.split('\n\n').filter(Boolean).map((para, i) => (
               <p key={i} className={cn(
                 "font-normal text-lead",
@@ -104,10 +81,10 @@ export default function InnerPageHero({
                 {para.trim()}
               </p>
             ))}
-          </motion.div>
+          </div>
 
           {showCTA && (
-            <motion.div variants={fadeUp} className="mt-10 flex justify-center">
+            <div className="mt-10 flex justify-center">
               <Link href={ctaHref} className={cn(
                 "inline-block font-medium text-cta px-6 py-3 border rounded transition-all duration-200",
                 isLightBg
@@ -116,9 +93,9 @@ export default function InnerPageHero({
               )}>
                 {ctaText} &rarr;
               </Link>
-            </motion.div>
+            </div>
           )}
-        </motion.div>
+        </div>
       </div>
     </section>
   )
