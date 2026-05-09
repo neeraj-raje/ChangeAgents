@@ -43,38 +43,28 @@ export default function AuroraHero() {
 
         {/* Content Layer */}
         <div className="relative z-10 max-w-6xl mx-auto w-full px-6 lg:px-8 pt-[3.75px] pb-[2.5px]">
-          <motion.div
-            className="mx-auto text-center max-w-4xl"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.1 } }
-            }}
-          >
-            <motion.h1
-              variants={fadeUp}
+          <div className="mx-auto text-center max-w-4xl">
+            <h1
               className="font-bold text-display text-white"
               style={{ fontSize: 'calc(3.5rem + 7px)' }}
             >
               Shaping Enterprise
               <br />
               Market Architecture in Technology
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              variants={fadeUp}
+            <p
               className="font-normal text-lead text-white/80 mt-8 max-w-3xl mx-auto"
             >
               We advise enterprise technology companies and senior leaders on strategic positioning, competitive architecture, and narrative alignment at moments of growth, transition, and scale.
-            </motion.p>
+            </p>
 
-            <motion.div variants={fadeUp} className="mt-10 flex justify-center">
+            <div className="mt-10 flex justify-center">
               <CTAButton href="/contact" variant="aurora-dark">
                 Request a Conversation →
               </CTAButton>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
