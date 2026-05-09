@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 import AuroraHero from '@/components/sections/AuroraHero'
+import ClientLogoGrid from '@/components/sections/ClientLogoGrid'
 
 const focusAreas = [
   {
@@ -179,19 +180,13 @@ export default function HomePage() {
       {/* Two Decades in Enterprise Technology */}
       <section className="bg-[#FAFBFC] px-6 lg:px-8 pt-12 lg:pt-20 pb-24 lg:pb-32">
         <div className="max-w-6xl mx-auto">
-          <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
-                <h2 className="font-medium text-heading text-[#111827]">
-                  Two Decades in Enterprise Technology
-                </h2>
-                <p className="font-normal text-body text-[#52606D] max-w-[65ch] mt-4" style={{ lineHeight: '1.75', letterSpacing: '-0.01em' }}>
-                  Our work spans infrastructure, cybersecurity, SaaS, distribution, and digital transformation ecosystems — across founders, country heads, and global technology firms.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-aurora-blue-100 via-aurora-indigo-300 to-aurora-violet-300 border border-aurora-blue-300 rounded h-72"></div>
-            </div>
-          </div>
+          <h2 className="font-medium text-heading text-[#111827]">
+            Two Decades in Enterprise Technology
+          </h2>
+          <p className="font-normal text-body text-[#52606D] max-w-[65ch] mt-4" style={{ lineHeight: '1.75', letterSpacing: '-0.01em' }}>
+            Our work spans infrastructure, cybersecurity, SaaS, distribution, and digital transformation ecosystems — across founders, country heads, and global technology firms.
+          </p>
+          <ClientLogoGrid />
         </div>
       </section>
 
