@@ -15,11 +15,10 @@ export default function InnerCardGrid({ items, cardBgColor = '#EFF5FB', tickColo
       {items.map((item, i) => (
         <div
           key={i}
-          className="flex items-start p-5 rounded-lg border"
+          className="flex items-start p-5 rounded-lg border border-opacity-20"
           style={{
             backgroundColor: cardBgColor,
             borderColor: tickColor,
-            borderOpacity: 0.2,
           }}
         >
           <div
