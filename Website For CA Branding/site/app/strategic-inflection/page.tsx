@@ -20,9 +20,14 @@ export default function StrategicInflectionPage() {
 At critical moments, positioning decisions carry disproportionate impact.
 
 We work with leaders and firms during high-stakes transitions where clarity, timing, and narrative alignment are essential.`}
-        bgColor="#EEE8DF"
-        auroraGradient="linear-gradient(135deg, rgba(216, 155, 106, 0.4) 0%, rgba(232, 184, 150, 0.3) 50%, rgba(240, 212, 181, 0.4) 100%)"
-        textColor="dark"
+        bgColor="#091918"
+        darkAurora={{
+          bands: 'repeating-linear-gradient(100deg, #091918 0%, #0F2A28 15%, #0D3330 30%, #134E4A 45%, #0D2E2B 60%, #091918 75%)',
+          glow1: 'rgba(13, 148, 136, 0.18)',
+          glow1Pos: { top: '-10%', right: '10%' },
+          glow2: 'rgba(6, 78, 59, 0.3)',
+          glow2Pos: { top: '20%', left: '-5%' },
+        }}
       />
 
       {/* Typical Engagements */}

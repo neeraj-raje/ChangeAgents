@@ -20,6 +20,14 @@ export default function TheCollectivePage() {
         heading="The Change Agents Collective"
         lead="A curated group of independent senior advisors who collaborate with Change Agents on select engagements requiring a broader combination of perspectives."
         showCTA={false}
+        bgColor="#0C1420"
+        darkAurora={{
+          bands: 'repeating-linear-gradient(100deg, #0C1420 0%, #111E30 15%, #182840 30%, #1E3350 45%, #111E30 60%, #0C1420 75%)',
+          glow1: 'rgba(96, 165, 250, 0.1)',
+          glow1Pos: { top: '-15%', left: '25%' },
+          glow2: 'rgba(14, 30, 55, 0.5)',
+          glow2Pos: { bottom: '-20%', left: '10%' },
+        }}
       />
 
       {/* Context */}

@@ -1,6 +1,14 @@
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
+interface DarkAurora {
+  bands: string
+  glow1: string
+  glow1Pos: { top?: string; right?: string; bottom?: string; left?: string }
+  glow2: string
+  glow2Pos: { top?: string; right?: string; bottom?: string; left?: string }
+}
+
 interface InnerPageHeroProps {
   eyebrow?: string
   heading: string
@@ -9,9 +17,7 @@ interface InnerPageHeroProps {
   ctaHref?: string
   ctaText?: string
   bgColor?: string
-  auroraHighlight?: string
-  auroraMid?: string
-  auroraGradient?: string
+  darkAurora?: DarkAurora
   textColor?: 'light' | 'dark'
 }
 
@@ -22,51 +28,63 @@ export default function InnerPageHero({
   showCTA = true,
   ctaHref = '/contact',
   ctaText = 'Request a Conversation',
-  bgColor = '#2C3E50',
-  auroraHighlight = 'rgba(75, 100, 117, 0.3)',
-  auroraMid = 'rgba(36, 56, 68, 0.15)',
-  auroraGradient,
+  bgColor = '#0D1520',
+  darkAurora,
   textColor = 'light',
 }: InnerPageHeroProps) {
-  const boxShadowStyle = `inset 0 0 200px 100px ${auroraHighlight}, inset 200px 0 300px 150px ${auroraHighlight.replace('0.3', '0.2')}, inset 0 200px 300px 150px ${auroraMid}`
-
   const isLightBg = textColor === 'dark'
 
   return (
     <section
       className="relative px-6 lg:px-8 py-24 lg:py-32 overflow-hidden"
-      style={{
-        backgroundColor: bgColor,
-        ...(auroraGradient ? {} : { boxShadow: boxShadowStyle }),
-      }}
+      style={{ backgroundColor: bgColor }}
     >
-      {auroraGradient && (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {darkAurora && (
+        <>
+          {/* Animated aurora bands */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+              className="absolute -inset-[10px] opacity-30 blur-[80px] animate-aurora will-change-[background-position]"
+              style={{
+                backgroundImage: darkAurora.bands,
+                backgroundSize: '400% 100%',
+              }}
+            />
+          </div>
+
+          {/* Primary atmospheric glow blob */}
           <div
-            className="aurora-overlay absolute inset-0 opacity-80 blur-xl"
+            className="absolute pointer-events-none w-[600px] h-[500px] rounded-full blur-[120px]"
             style={{
-              backgroundImage: auroraGradient,
-              backgroundSize: '300% 100%',
-              backgroundPosition: '0% 0%',
-              willChange: 'background-position',
+              background: `radial-gradient(ellipse, ${darkAurora.glow1} 0%, transparent 70%)`,
+              ...darkAurora.glow1Pos,
             }}
           />
-        </div>
+
+          {/* Secondary glow blob */}
+          <div
+            className="absolute pointer-events-none w-[400px] h-[350px] rounded-full blur-[100px]"
+            style={{
+              background: `radial-gradient(ellipse, ${darkAurora.glow2} 0%, transparent 70%)`,
+              ...darkAurora.glow2Pos,
+            }}
+          />
+        </>
       )}
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="mx-auto text-center max-w-4xl">
           {eyebrow && (
             <p className={cn(
-              "font-light text-small uppercase tracking-label mb-6",
-              isLightBg ? "text-[#52606D]" : "text-white/60"
+              'font-light text-small uppercase tracking-label mb-6',
+              isLightBg ? 'text-[#52606D]' : 'text-white/50'
             )}>
               {eyebrow}
             </p>
           )}
 
           <h1
-            className={cn("font-bold", isLightBg ? "text-[#111827]" : "text-white")}
+            className={cn('font-bold', isLightBg ? 'text-[#111827]' : 'text-white')}
             style={{ fontSize: 'calc(3.5rem + 7px)' }}
           >
             {heading}
@@ -74,10 +92,13 @@ export default function InnerPageHero({
 
           <div className="mt-6 space-y-4 max-w-3xl mx-auto">
             {lead.split('\n\n').filter(Boolean).map((para, i) => (
-              <p key={i} className={cn(
-                "font-normal text-lead",
-                isLightBg ? "text-[#52606D]" : "text-white/70"
-              )}>
+              <p
+                key={i}
+                className={cn(
+                  'font-normal text-lead',
+                  isLightBg ? 'text-[#52606D]' : 'text-white/70'
+                )}
+              >
                 {para.trim()}
               </p>
             ))}
@@ -85,12 +106,15 @@ export default function InnerPageHero({
 
           {showCTA && (
             <div className="mt-10 flex justify-center">
-              <Link href={ctaHref} className={cn(
-                "inline-block font-medium text-cta px-6 py-3 border rounded transition-all duration-200",
-                isLightBg
-                  ? "border-[#52606D] text-[#111827] bg-white/20 hover:bg-white/30"
-                  : "border-white/60 text-white bg-white/10 hover:bg-white/20"
-              )}>
+              <Link
+                href={ctaHref}
+                className={cn(
+                  'inline-block font-medium text-cta px-6 py-3 border rounded transition-all duration-200',
+                  isLightBg
+                    ? 'border-[#52606D] text-[#111827] bg-white/20 hover:bg-white/30'
+                    : 'border-white/30 text-white bg-white/5 hover:bg-white/10 hover:border-white/50'
+                )}
+              >
                 {ctaText} &rarr;
               </Link>
             </div>

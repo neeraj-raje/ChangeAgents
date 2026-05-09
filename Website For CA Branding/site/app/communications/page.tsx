@@ -16,6 +16,14 @@ export default function CommunicationsPage() {
       <InnerPageHero
         eyebrow="STRATEGIC ADVISORY  FOR ENTERPRISE TECHNOLOGY"
         heading="Communications, Visibility & Narrative Activation"
+        bgColor="#0F1318"
+        darkAurora={{
+          bands: 'repeating-linear-gradient(100deg, #0F1318 0%, #141D28 15%, #1A2940 30%, #20365A 45%, #141D28 60%, #0F1318 75%)',
+          glow1: 'rgba(30, 64, 175, 0.18)',
+          glow1Pos: { top: '-5%', left: '15%' },
+          glow2: 'rgba(51, 65, 85, 0.35)',
+          glow2Pos: { bottom: '-10%', right: '0%' },
+        }}
         lead={`Strategic clarity that stays internal changes nothing.
 
 Market architecture becomes consequential only when it reaches the people, platforms, and conversations that matter. The work of activation — translating positioning into presence, narrative into perception — is not separate from strategy. It is where strategy proves itself.

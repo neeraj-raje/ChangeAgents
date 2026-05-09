@@ -40,6 +40,14 @@ export default function AboutPage() {
       <InnerPageHero
         eyebrow="STRATEGIC ADVISORY  FOR ENTERPRISE TECHNOLOGY"
         heading="About Change Agents"
+        bgColor="#0A0F1A"
+        darkAurora={{
+          bands: 'repeating-linear-gradient(100deg, #0A0F1A 0%, #0D1628 15%, #0F1C35 30%, #122040 45%, #0D1628 60%, #0A0F1A 75%)',
+          glow1: 'rgba(30, 58, 138, 0.18)',
+          glow1Pos: { top: '-5%', left: '0%' },
+          glow2: 'rgba(17, 24, 39, 0.6)',
+          glow2Pos: { bottom: '-10%', right: '5%' },
+        }}
         lead={`Some positioning problems look like communications problems. They're not. They're structural — rooted in how a firm or its leadership is placed within a competitive market, how its narrative aligns with its actual trajectory, and whether the architecture underneath the messaging can hold weight.
 
 We work at that level. Before amplification. Before visibility. At the point where clarity either exists — or doesn't.
