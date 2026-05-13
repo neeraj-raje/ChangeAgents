@@ -42,6 +42,7 @@ export default function Navigation() {
                 alt="Change Agents"
                 width={359}
                 height={108}
+                className="h-8 lg:h-14 w-auto object-contain"
               />
             </Link>
             <div className="hidden lg:block text-sm text-muted font-light whitespace-nowrap mb-1">
@@ -99,7 +100,7 @@ export default function Navigation() {
                   alt="Change Agents"
                   width={359}
                   height={108}
-                  className="h-[4.25rem] w-auto object-contain"
+                  className="h-[2.5rem] w-auto object-contain"
                 />
               </Link>
               <button

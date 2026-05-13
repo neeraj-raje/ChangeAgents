@@ -84,8 +84,7 @@ export default function InnerPageHero({
           )}
 
           <h1
-            className={cn('font-bold', isLightBg ? 'text-[#111827]' : 'text-white')}
-            style={{ fontSize: 'calc(3.5rem + 7px)' }}
+            className={cn('font-bold text-display', isLightBg ? 'text-[#111827]' : 'text-white')}
           >
             {heading}
           </h1>

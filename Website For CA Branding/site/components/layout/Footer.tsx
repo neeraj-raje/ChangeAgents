@@ -69,7 +69,7 @@ export default function Footer() {
             />
           </Link>
 
-          <nav className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16" aria-label="Footer navigation">
+          <nav className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-16" aria-label="Footer navigation">
             <NavColumn links={col1} />
             <NavColumn links={col2} />
             <NavColumn links={col3} />

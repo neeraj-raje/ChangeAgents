@@ -8,7 +8,7 @@ export default function AuroraHero() {
     <main>
       <div
         className={cn(
-          'relative flex h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 text-white',
+          'relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 text-white',
         )}
         style={
           {
@@ -36,11 +36,10 @@ export default function AuroraHero() {
         </div>
 
         {/* Content Layer */}
-        <div className="relative z-10 max-w-6xl mx-auto w-full px-6 lg:px-8 pt-[3.75px] pb-[2.5px]">
+        <div className="relative z-10 max-w-6xl mx-auto w-full px-6 lg:px-8 py-20 lg:py-0">
           <div className="mx-auto text-center max-w-4xl">
             <h1
               className="font-bold text-display text-white"
-              style={{ fontSize: 'calc(3.5rem + 7px)' }}
             >
               Shaping Enterprise
               <br />
