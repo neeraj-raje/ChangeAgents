@@ -4,9 +4,24 @@ import InnerCardGrid from '@/components/sections/InnerCardGrid'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 
 export const metadata: Metadata = {
-  title: 'Strategic Inflection — Change Agents',
+  title: 'Advisory for M&A, Leadership Transitions & Market Entry — Change Agents',
   description:
-    'High-stakes advisory during leadership transitions, market entry, M&A, and structural repositioning.',
+    'High-trust advisory during M&A, leadership transitions, market entry, and structural repositioning for enterprise technology firms and senior leaders.',
+  openGraph: {
+    title: 'Advisory for M&A, Leadership Transitions & Market Entry — Change Agents',
+    description:
+      'High-trust advisory during M&A, leadership transitions, market entry, and structural repositioning for enterprise technology firms and senior leaders.',
+    url: 'https://changeagents.in/strategic-inflection/',
+    images: [{ url: '/assets/logo/ChangeAgents_Logo_new.png', width: 800, height: 226 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Advisory for M&A, Leadership Transitions & Market Entry — Change Agents',
+    description:
+      'High-trust advisory during M&A, leadership transitions, market entry, and structural repositioning for enterprise technology firms and senior leaders.',
+  },
+  alternates: { canonical: 'https://changeagents.in/strategic-inflection/' },
 }
 
 export default function StrategicInflectionPage() {

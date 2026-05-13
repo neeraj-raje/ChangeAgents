@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import Script from 'next/script'
 import './globals.css'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
@@ -17,9 +18,16 @@ const sohne = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://changeagents.in'),
   title: 'Change Agents — Strategic Advisory',
   description:
-    'Change Agents advises enterprise technology companies and senior leaders on strategic positioning, competitive architecture, and narrative alignment.',
+    'Change Agents advises enterprise technology firms and senior leaders on strategic positioning, competitive architecture, and narrative alignment. India & APAC.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Change Agents',
+    images: [{ url: '/assets/logo/ChangeAgents_Logo_new.png', width: 800, height: 226 }],
+  },
+  twitter: { card: 'summary' },
 }
 
 export default function RootLayout({
@@ -33,6 +41,16 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YL37VHYDPT"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YL37VHYDPT');
+        `}</Script>
       </body>
     </html>
   )

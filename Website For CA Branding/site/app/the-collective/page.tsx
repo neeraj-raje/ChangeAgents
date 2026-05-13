@@ -7,9 +7,24 @@ import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 import SectionLabel from '@/components/ui/SectionLabel'
 
 export const metadata: Metadata = {
-  title: 'The Collective — Change Agents',
+  title: 'Senior Advisory Network for Enterprise Technology — Change Agents',
   description:
-    'A curated group of independent senior advisors who collaborate with Change Agents on select engagements.',
+    'The Change Agents Collective: a curated group of independent senior advisors who collaborate on select engagements requiring broader combinations of perspectives.',
+  openGraph: {
+    title: 'Senior Advisory Network for Enterprise Technology — Change Agents',
+    description:
+      'The Change Agents Collective: a curated group of independent senior advisors who collaborate on select engagements requiring broader combinations of perspectives.',
+    url: 'https://changeagents.in/the-collective/',
+    images: [{ url: '/assets/logo/ChangeAgents_Logo_new.png', width: 800, height: 226 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Senior Advisory Network for Enterprise Technology — Change Agents',
+    description:
+      'The Change Agents Collective: a curated group of independent senior advisors who collaborate on select engagements requiring broader combinations of perspectives.',
+  },
+  alternates: { canonical: 'https://changeagents.in/the-collective/' },
 }
 
 export default function TheCollectivePage() {
@@ -93,8 +108,8 @@ export default function TheCollectivePage() {
             <div className="flex flex-col items-center text-center">
               <div className="w-48 h-48 rounded-full overflow-hidden mb-5 border border-rule">
                 <Image
-                  src="/assets/images/SharbariChakraborty_ProfilePic.png"
-                  alt="Sharbari Chakraborty"
+                  src="/assets/images/SharbariChakraborty_ProfilePic.webp"
+                  alt="Sharbari Chakraborty — Leadership Coach and Organisational Transformation Advisor"
                   width={192}
                   height={192}
                   className="w-full h-full object-cover grayscale-photo"

@@ -1,33 +1,51 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const col1 = [
+type NavItem = { href: string; label: string; external?: boolean }
+
+const col1: NavItem[] = [
   { href: '/executive-advisory', label: 'Executive Advisory' },
   { href: '/company-advisory', label: 'Company Advisory' },
   { href: '/strategic-inflection', label: 'Strategic Inflection' },
 ]
 
-const col2 = [
+const col2: NavItem[] = [
   { href: '/communications', label: 'PR & Communications' },
   { href: '/the-collective', label: 'The Collective' },
 ]
 
-const col3 = [
+const col3: NavItem[] = [
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ]
 
-function NavColumn({ links }: { links: { href: string; label: string }[] }) {
+const col4: NavItem[] = [
+  { href: 'https://www.linkedin.com/company/change-agents/', label: 'LinkedIn', external: true },
+  { href: 'https://changeagentspr.wordpress.com/', label: 'Blog', external: true },
+]
+
+function NavColumn({ links }: { links: NavItem[] }) {
   return (
     <ul className="flex flex-col gap-3">
       {links.map((link) => (
         <li key={link.href}>
-          <Link
-            href={link.href}
-            className="text-sm text-[#E8EDF2] no-underline hover:opacity-60 transition-opacity"
-          >
-            {link.label}
-          </Link>
+          {link.external ? (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-[#E8EDF2] no-underline hover:opacity-60 transition-opacity"
+            >
+              {link.label}
+            </a>
+          ) : (
+            <Link
+              href={link.href}
+              className="text-sm text-[#E8EDF2] no-underline hover:opacity-60 transition-opacity"
+            >
+              {link.label}
+            </Link>
+          )}
         </li>
       ))}
     </ul>
@@ -51,10 +69,11 @@ export default function Footer() {
             />
           </Link>
 
-          <nav className="grid grid-cols-3 gap-10 lg:gap-16" aria-label="Footer navigation">
+          <nav className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16" aria-label="Footer navigation">
             <NavColumn links={col1} />
             <NavColumn links={col2} />
             <NavColumn links={col3} />
+            <NavColumn links={col4} />
           </nav>
         </div>
 

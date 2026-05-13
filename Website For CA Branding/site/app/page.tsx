@@ -1,8 +1,58 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 import AuroraHero from '@/components/sections/AuroraHero'
 import ClientLogoGrid from '@/components/sections/ClientLogoGrid'
+
+export const metadata: Metadata = {
+  title: 'Strategic Advisory for Enterprise Technology — Change Agents',
+  description:
+    'Change Agents advises enterprise technology firms and senior leaders on strategic positioning, competitive architecture, and narrative alignment. India & APAC.',
+  openGraph: {
+    title: 'Strategic Advisory for Enterprise Technology — Change Agents',
+    description:
+      'Change Agents advises enterprise technology firms and senior leaders on strategic positioning, competitive architecture, and narrative alignment. India & APAC.',
+    url: 'https://changeagents.in/',
+    images: [{ url: '/assets/logo/ChangeAgents_Logo_new.png', width: 800, height: 226 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Strategic Advisory for Enterprise Technology — Change Agents',
+    description:
+      'Change Agents advises enterprise technology firms and senior leaders on strategic positioning, competitive architecture, and narrative alignment. India & APAC.',
+  },
+  alternates: { canonical: 'https://changeagents.in/' },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'Change Agents',
+      url: 'https://changeagents.in',
+      logo: 'https://changeagents.in/assets/logo/ChangeAgents_Logo_new.png',
+      sameAs: ['https://www.linkedin.com/company/change-agents/'],
+    },
+    {
+      '@type': 'ProfessionalService',
+      name: 'Change Agents',
+      description:
+        'Strategic advisory practice for enterprise technology firms and senior leaders. Market architecture, positioning, and narrative alignment.',
+      url: 'https://changeagents.in',
+      areaServed: ['India', 'Asia-Pacific'],
+    },
+    {
+      '@type': 'Person',
+      name: 'Shubhendu Nath',
+      jobTitle: 'Founder',
+      worksFor: { '@type': 'Organization', name: 'Change Agents' },
+      url: 'https://changeagents.in/about/',
+    },
+  ],
+}
 
 const focusAreas = [
   {
@@ -28,6 +78,10 @@ const focusAreas = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Aurora Hero */}
       <AuroraHero />
 
@@ -119,8 +173,8 @@ export default function HomePage() {
               <div className="lg:col-span-3">
                 <div className="rounded-lg overflow-hidden border-2 border-gray-300 shadow-sm">
                   <Image
-                    src="/assets/team/shubhendu-nath.jpg"
-                    alt="Shubhendu Nath"
+                    src="/assets/team/shubhendu-nath.webp"
+                    alt="Founder, Change Agents Strategic Advisory"
                     width={240}
                     height={300}
                     className="w-full h-auto object-cover"

@@ -59,8 +59,8 @@ export default function SharbariChakrabortyPage() {
             <div className="sticky top-32">
               <div className="aspect-square w-full max-w-xs overflow-hidden rounded-lg border border-rule">
                 <Image
-                  src="/assets/team/sharbari-chakraborty.jpg"
-                  alt="Sharbari Chakraborty"
+                  src="/assets/team/sharbari-chakraborty.webp"
+                  alt="Sharbari Chakraborty — Leadership Coach and Organisational Transformation Advisor"
                   width={400}
                   height={400}
                   className="grayscale-photo w-full h-full object-cover"

@@ -5,29 +5,44 @@ import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 import SectionLabel from '@/components/ui/SectionLabel'
 
 export const metadata: Metadata = {
-  title: 'About — Change Agents',
+  title: 'About Change Agents — Strategic Advisory Practice, India',
   description:
-    'Change Agents is a founder-led strategic advisory practice working at the level of enterprise market architecture.',
+    'Change Agents is a founder-led strategic advisory practice working at the level of enterprise market architecture. Meet the team behind the work.',
+  openGraph: {
+    title: 'About Change Agents — Strategic Advisory Practice, India',
+    description:
+      'Change Agents is a founder-led strategic advisory practice working at the level of enterprise market architecture. Meet the team behind the work.',
+    url: 'https://changeagents.in/about/',
+    images: [{ url: '/assets/logo/ChangeAgents_Logo_new.png', width: 800, height: 226 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'About Change Agents — Strategic Advisory Practice, India',
+    description:
+      'Change Agents is a founder-led strategic advisory practice working at the level of enterprise market architecture. Meet the team behind the work.',
+  },
+  alternates: { canonical: 'https://changeagents.in/about/' },
 }
 
 const team = [
   {
-    image: '/assets/team/shubhendu-nath.jpg',
-    alt: 'Shubhendu Nath — Strategic Advisory',
+    image: '/assets/team/shubhendu-nath.webp',
+    alt: 'Shubhendu Nath — Founder and Lead Advisor, Change Agents',
     title: 'Strategic Advisory',
     subtitle: 'Led directly by Shubhendu Nath',
     body: 'All engagements are shaped at the level of enterprise market architecture, positioning, and narrative alignment.',
   },
   {
-    image: '/assets/team/neeraj-raje.jpg',
-    alt: 'Neeraj Raje — Digital & Narrative Strategy and Activation',
+    image: '/assets/team/neeraj-raje.webp',
+    alt: 'Neeraj Raje — Digital and Narrative Strategy, Change Agents',
     title: 'Digital & Narrative Strategy and Activation',
     subtitle: 'Led by Neeraj Raje',
     body: 'Where required, strategic thinking is translated into visible platforms through content, digital presence, and narrative amplification.',
   },
   {
-    image: '/assets/team/krishnananda.jpg',
-    alt: 'Krishnananda — Institutional & Execution Backbone',
+    image: '/assets/team/krishnananda.webp',
+    alt: 'Krishnananda — Institutional and Execution Lead, Change Agents',
     title: 'Institutional & Execution Backbone',
     subtitle: 'Anchored by Krishnananda',
     body: 'Ensuring continuity, operational depth, and execution capability when activation is required.',
@@ -63,8 +78,8 @@ We work with enterprise technology leaders and firms who want to determine their
             <div className="lg:col-span-4">
               <div className="aspect-square w-full max-w-xs overflow-hidden rounded-lg border border-rule">
                 <Image
-                  src="/assets/team/shubhendu-nath.jpg"
-                  alt="Shubhendu Nath — Founder, Change Agents"
+                  src="/assets/team/shubhendu-nath.webp"
+                  alt="Shubhendu Nath — Founder and Lead Advisor, Change Agents"
                   width={320}
                   height={320}
                   className="grayscale-photo w-full h-full object-cover"

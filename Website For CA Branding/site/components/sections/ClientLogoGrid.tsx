@@ -1,28 +1,28 @@
 import Image from 'next/image'
 
 const logos = [
-  { src: '/assets/Clients/Accops.png',                                  alt: 'Accops' },
-  { src: '/assets/Clients/Allied Telesis.png',                          alt: 'Allied Telesis' },
-  { src: '/assets/Clients/Arcserve.png',                                alt: 'Arcserve' },
-  { src: '/assets/Clients/Array Networks.png',                          alt: 'Array Networks' },
-  { src: '/assets/Clients/Commvault.png',                               alt: 'Commvault' },
-  { src: '/assets/Clients/Crayon New Logo Unit.png',                    alt: 'Crayon' },
-  { src: '/assets/Clients/Eightfold.png',                               alt: 'Eightfold' },
-  { src: '/assets/Clients/EverestIMS logo.png',                         alt: 'EverestIMS' },
-  { src: '/assets/Clients/Forcepoint.png',                              alt: 'Forcepoint' },
-  { src: '/assets/Clients/Hitachi Systems India Private Limited.png',   alt: 'Hitachi Systems' },
-  { src: '/assets/Clients/iValue.png',                                  alt: 'iValue' },
-  { src: '/assets/Clients/MAIT.png',                                    alt: 'MAIT' },
-  { src: '/assets/Clients/Milestone.png',                               alt: 'Milestone' },
-  { src: '/assets/Clients/R&M.png',                                     alt: 'R&M' },
-  { src: '/assets/Clients/RAH New Logo.png',                            alt: 'RAH Infotech' },
-  { src: '/assets/Clients/RARITAN.png',                                 alt: 'Raritan' },
-  { src: '/assets/Clients/Radware.png',                                 alt: 'Radware' },
-  { src: '/assets/Clients/Suse.png',                                    alt: 'SUSE' },
-  { src: '/assets/Clients/TECHNOBIND.png',                              alt: 'Technobind' },
-  { src: '/assets/Clients/Tenable.png',                                 alt: 'Tenable' },
-  { src: '/assets/Clients/WatchGaurd.png',                              alt: 'WatchGuard' },
-  { src: '/assets/Clients/WinMagic.png',                                alt: 'WinMagic' },
+  { src: '/assets/Clients/Accops.webp',                                  alt: 'Accops — Client of Change Agents' },
+  { src: '/assets/Clients/Allied Telesis.webp',                          alt: 'Allied Telesis — Client of Change Agents' },
+  { src: '/assets/Clients/Arcserve.webp',                                alt: 'Arcserve — Client of Change Agents' },
+  { src: '/assets/Clients/Array Networks.webp',                          alt: 'Array Networks — Client of Change Agents' },
+  { src: '/assets/Clients/Commvault.webp',                               alt: 'Commvault — Client of Change Agents' },
+  { src: '/assets/Clients/Crayon New Logo Unit.webp',                    alt: 'Crayon — Client of Change Agents' },
+  { src: '/assets/Clients/Eightfold.webp',                               alt: 'Eightfold — Client of Change Agents' },
+  { src: '/assets/Clients/EverestIMS logo.webp',                         alt: 'EverestIMS — Client of Change Agents' },
+  { src: '/assets/Clients/Forcepoint.webp',                              alt: 'Forcepoint — Client of Change Agents' },
+  { src: '/assets/Clients/Hitachi Systems India Private Limited.webp',   alt: 'Hitachi Systems India — Client of Change Agents' },
+  { src: '/assets/Clients/iValue.webp',                                  alt: 'iValue — Client of Change Agents' },
+  { src: '/assets/Clients/MAIT.webp',                                    alt: 'MAIT — Client of Change Agents' },
+  { src: '/assets/Clients/Milestone.webp',                               alt: 'Milestone — Client of Change Agents' },
+  { src: '/assets/Clients/R&M.webp',                                     alt: 'R&M — Client of Change Agents' },
+  { src: '/assets/Clients/RAH New Logo.webp',                            alt: 'RAH Infotech — Client of Change Agents' },
+  { src: '/assets/Clients/RARITAN.webp',                                 alt: 'Raritan — Client of Change Agents' },
+  { src: '/assets/Clients/Radware.webp',                                 alt: 'Radware — Client of Change Agents' },
+  { src: '/assets/Clients/Suse.webp',                                    alt: 'SUSE — Client of Change Agents' },
+  { src: '/assets/Clients/TECHNOBIND.webp',                              alt: 'Technobind — Client of Change Agents' },
+  { src: '/assets/Clients/Tenable.webp',                                 alt: 'Tenable — Client of Change Agents' },
+  { src: '/assets/Clients/WatchGaurd.webp',                              alt: 'WatchGuard — Client of Change Agents' },
+  { src: '/assets/Clients/WinMagic.webp',                                alt: 'WinMagic — Client of Change Agents' },
 ]
 
 export default function ClientLogoGrid() {
@@ -36,7 +36,6 @@ export default function ClientLogoGrid() {
             width={120}
             height={40}
             className="h-10 w-auto object-contain grayscale opacity-50 hover:opacity-90 transition-opacity duration-300"
-            unoptimized
           />
         </div>
       ))}

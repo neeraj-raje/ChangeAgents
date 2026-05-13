@@ -5,9 +5,24 @@ import EngageSection from '@/components/sections/EngageSection'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 
 export const metadata: Metadata = {
-  title: 'Communications — Change Agents',
+  title: 'PR & Strategic Communications for Enterprise Technology — Change Agents',
   description:
-    'Integrated communications, visibility, and narrative activation grounded in prior strategic clarity.',
+    'Integrated PR, media strategy, and narrative activation for enterprise technology firms — grounded in strategic clarity, not promotional campaigns.',
+  openGraph: {
+    title: 'PR & Strategic Communications for Enterprise Technology — Change Agents',
+    description:
+      'Integrated PR, media strategy, and narrative activation for enterprise technology firms — grounded in strategic clarity, not promotional campaigns.',
+    url: 'https://changeagents.in/communications/',
+    images: [{ url: '/assets/logo/ChangeAgents_Logo_new.png', width: 800, height: 226 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'PR & Strategic Communications for Enterprise Technology — Change Agents',
+    description:
+      'Integrated PR, media strategy, and narrative activation for enterprise technology firms — grounded in strategic clarity, not promotional campaigns.',
+  },
+  alternates: { canonical: 'https://changeagents.in/communications/' },
 }
 
 export default function CommunicationsPage() {

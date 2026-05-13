@@ -5,9 +5,24 @@ import EngageSection from '@/components/sections/EngageSection'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 
 export const metadata: Metadata = {
-  title: 'Company Advisory — Change Agents',
+  title: 'Enterprise Technology Positioning & Competitive Strategy — Change Agents',
   description:
-    'Market architecture and category positioning for enterprise technology firms.',
+    'Category positioning, revenue narrative design, and competitive differentiation for enterprise technology firms operating in India and Asia-Pacific.',
+  openGraph: {
+    title: 'Enterprise Technology Positioning & Competitive Strategy — Change Agents',
+    description:
+      'Category positioning, revenue narrative design, and competitive differentiation for enterprise technology firms operating in India and Asia-Pacific.',
+    url: 'https://changeagents.in/company-advisory/',
+    images: [{ url: '/assets/logo/ChangeAgents_Logo_new.png', width: 800, height: 226 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Enterprise Technology Positioning & Competitive Strategy — Change Agents',
+    description:
+      'Category positioning, revenue narrative design, and competitive differentiation for enterprise technology firms operating in India and Asia-Pacific.',
+  },
+  alternates: { canonical: 'https://changeagents.in/company-advisory/' },
 }
 
 export default function CompanyAdvisoryPage() {

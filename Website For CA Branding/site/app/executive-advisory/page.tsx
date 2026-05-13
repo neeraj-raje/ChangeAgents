@@ -5,9 +5,24 @@ import EngageSection from '@/components/sections/EngageSection'
 import DarkCTAFooter from '@/components/sections/DarkCTAFooter'
 
 export const metadata: Metadata = {
-  title: 'Executive Advisory — Change Agents',
+  title: 'Executive Positioning & Market Architecture for Technology Leaders — Change Agents',
   description:
-    'Strategic positioning and market architecture for founders, CEOs, and senior leaders.',
+    'Strategic positioning and market architecture for enterprise technology founders, CEOs, and senior leaders navigating growth, transition, and leadership visibility.',
+  openGraph: {
+    title: 'Executive Positioning & Market Architecture for Technology Leaders — Change Agents',
+    description:
+      'Strategic positioning and market architecture for enterprise technology founders, CEOs, and senior leaders navigating growth, transition, and leadership visibility.',
+    url: 'https://changeagents.in/executive-advisory/',
+    images: [{ url: '/assets/logo/ChangeAgents_Logo_new.png', width: 800, height: 226 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Executive Positioning & Market Architecture for Technology Leaders — Change Agents',
+    description:
+      'Strategic positioning and market architecture for enterprise technology founders, CEOs, and senior leaders navigating growth, transition, and leadership visibility.',
+  },
+  alternates: { canonical: 'https://changeagents.in/executive-advisory/' },
 }
 
 export default function ExecutiveAdvisoryPage() {
